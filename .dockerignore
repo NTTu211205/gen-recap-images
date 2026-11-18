@@ -1,0 +1,12 @@
+**/.env
+**/.env.*
+.git
+.venv
+.cache
+.agents
+.codex
+**/__pycache__
+**/*.py[cod]
+output
+tests
+.DS_Store
