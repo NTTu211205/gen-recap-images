@@ -127,9 +127,8 @@ def draw_category_badge(
     text_width = width_hi - text_left - icon_x
     size = max(1, round(height_hi * 0.36))
     spacing = max(1, round(height_hi * 0.025))
-    # A slightly condensed treatment matches the reference while retaining
-    # complete Vietnamese glyph coverage from the chosen bold font.
-    condensed = 0.90
+    # Keep natural script/display glyph proportions while fitting the badge.
+    condensed = 1.0
     while True:
         font = ImageFont.truetype(str(font_path), size)
         text = wrap_label(draw, label, font, text_width / condensed)
@@ -138,18 +137,24 @@ def draw_category_badge(
         )
         if (
             (bounds[2] - bounds[0]) * condensed <= text_width
-            and bounds[3] - bounds[1] <= height_hi * 0.72
+            and bounds[3] - bounds[1] <= height_hi * 0.78
         ):
             break
         if size <= 1:
             raise ValueError("Category badge is too small for its label")
         size -= 1
+    pad = 8
     text_layer = Image.new("RGBA", (
-        max(1, bounds[2] - bounds[0]), max(1, bounds[3] - bounds[1]),
+        max(1, bounds[2] - bounds[0] + pad * 2),
+        max(1, bounds[3] - bounds[1] + pad * 2),
     ))
     ImageDraw.Draw(text_layer).multiline_text(
-        (-bounds[0], -bounds[1]), text, font=font, fill=NAVY, spacing=spacing,
+        (-bounds[0] + pad, -bounds[1] + pad),
+        text, font=font, fill=NAVY, spacing=spacing,
     )
+    ink_bounds = text_layer.getbbox()
+    if ink_bounds is not None:
+        text_layer = text_layer.crop(ink_bounds)
     text_layer = text_layer.resize((
         max(1, round(text_layer.width * condensed)), text_layer.height,
     ), Image.Resampling.LANCZOS)

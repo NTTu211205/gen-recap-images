@@ -25,7 +25,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH="/app/.venv/bin:$PATH" \
     REMBG_MODEL_PATH=/app/models/isnet-general-use.onnx \
-    RECAP_FONT_PATH=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+    RECAP_FONT_PATH=/app/background/Pacifico-Regular.ttf
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

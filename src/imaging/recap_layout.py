@@ -5,6 +5,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
+from src.core.paths import BACKGROUND_DIR
 from src.imaging.background_templates import (
     GROUPS_PER_PAGE, IMAGE_SLOTS_BY_COUNT, background_for_groups,
 )
@@ -29,6 +30,7 @@ def find_font() -> Path:
     """Find a font with Vietnamese glyphs, or use RECAP_FONT_PATH."""
     configured = os.getenv("RECAP_FONT_PATH")
     candidates = [Path(configured)] if configured else [
+        BACKGROUND_DIR / "Pacifico-Regular.ttf",
         Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf"),
         Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
         Path("C:/Windows/Fonts/arialbd.ttf"),
@@ -39,6 +41,47 @@ def find_font() -> Path:
     raise FileNotFoundError(
         "Set RECAP_FONT_PATH to a Vietnamese-capable .ttf font"
     )
+
+
+BADGE_SCALE = 1.5
+
+
+def _scaled_badge_boxes(
+    badges: list[tuple[tuple[int, int, int, int], str, str]],
+) -> list[tuple[tuple[int, int, int, int], str, str]]:
+    centers = [
+        [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2]
+        for box, _, _ in badges
+    ]
+    for index, (cx, cy) in enumerate(centers):
+        row = [
+            other for other in range(len(badges))
+            if abs(centers[other][1] - cy) < 56
+        ]
+        if len(row) == 3:
+            ordered = sorted(row, key=lambda item: centers[item][0])
+            if index == ordered[0]:
+                centers[index][0] = max(155.0, cx - 16.0)
+            elif index == ordered[2]:
+                centers[index][0] = min(869.0, cx + 16.0)
+    scaled = []
+    for index, (box, label, group_id) in enumerate(badges):
+        cx, cy = centers[index]
+        width = (box[2] - box[0]) * BADGE_SCALE
+        height = (box[3] - box[1]) * BADGE_SCALE
+        for other_index in range(len(badges)):
+            if index == other_index:
+                continue
+            other_cx, other_cy = centers[other_index]
+            if abs(cy - other_cy) < height:
+                width = min(width, abs(cx - other_cx) - 6)
+        scaled.append(((
+            max(8, round(cx - width / 2)),
+            round(cy - height / 2),
+            min(1016, round(cx + width / 2)),
+            round(cy + height / 2),
+        ), label, group_id))
+    return scaled
 
 
 def render_category_badges(
@@ -52,7 +95,7 @@ def render_category_badges(
         image = source.convert("RGB")
     scale_x = image.width / 1024
     scale_y = image.height / 1024
-    for box, label, group_id in badges:
+    for box, label, group_id in _scaled_badge_boxes(badges):
         pixel_box = (
             round(box[0] * scale_x), round(box[1] * scale_y),
             round(box[2] * scale_x), round(box[3] * scale_y),
