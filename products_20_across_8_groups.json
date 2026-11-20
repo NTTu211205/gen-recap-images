@@ -1,0 +1,261 @@
+{
+  "summary": {
+    "total_products": 20,
+    "total_categories": 20,
+    "total_groups": 8,
+    "groups_list": [
+      "phones_tablets",
+      "computers_office",
+      "smart_accessories",
+      "appliances_kitchen",
+      "household",
+      "health_personal_care",
+      "fashion_sports_travel",
+      "tools_lighting"
+    ]
+  },
+  "product_codes": [
+    "0131491004724",
+    "2440931000946",
+    "0220042003180",
+    "3640045000017",
+    "0232391002614",
+    "0163346000577",
+    "0160079000048",
+    "3041094001986",
+    "3051097001790",
+    "3051099001621",
+    "1033265000855",
+    "1033187000378",
+    "1033240000889",
+    "4845000000145",
+    "4842053001086",
+    "4845000000137",
+    "9924325000074",
+    "1314740000062",
+    "9923189000268",
+    "9923381000303"
+  ],
+  "products": [
+    {
+      "productcode": "0131491004724",
+      "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+      "brand": "iPhone (Apple)",
+      "category_id": 27,
+      "category_name": "Điện thoại",
+      "group_id": "phones_tablets",
+      "group_name": "Điện thoại & Máy tính bảng",
+      "price": 34990000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/42/342679/iphone-17-pro-max-cam-thumb.jpg"
+    },
+    {
+      "productcode": "2440931000946",
+      "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+      "brand": "Ipad (Apple)",
+      "category_id": 30,
+      "category_name": "Máy tính bảng",
+      "group_id": "phones_tablets",
+      "group_name": "Điện thoại & Máy tính bảng",
+      "price": 12090000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/522/335308/ipad-11-wifi-sliver-thumb.jpg"
+    },
+    {
+      "productcode": "0220042003180",
+      "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+      "brand": "Hp",
+      "category_id": 28,
+      "category_name": "Laptop",
+      "group_id": "computers_office",
+      "group_name": "Máy tính & Văn phòng",
+      "price": 19790000,
+      "image_url": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003180-laptop-tron-20261104-600x600.png"
+    },
+    {
+      "productcode": "3640045000017",
+      "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+      "brand": "Brother",
+      "category_id": 75,
+      "category_name": "Máy in",
+      "group_id": "computers_office",
+      "group_name": "Máy tính & Văn phòng",
+      "price": 3290000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/5693/115902/may-in-laser-brother-hl-l2321d-thumb-600x600.jpg"
+    },
+    {
+      "productcode": "0232391002614",
+      "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+      "brand": "Kidcare",
+      "category_id": 49,
+      "category_name": "Đồng hồ thông minh",
+      "group_id": "smart_accessories",
+      "group_name": "Thiết bị thông minh & Phụ kiện",
+      "price": 2050000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/7077/333790/kidcare-sight-s1-hong-thumb.jpg"
+    },
+    {
+      "productcode": "0163346000577",
+      "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+      "brand": "Ava+",
+      "category_id": 133,
+      "category_name": "Tai nghe",
+      "group_id": "smart_accessories",
+      "group_name": "Thiết bị thông minh & Phụ kiện",
+      "price": 230000,
+      "image_url": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/tai-nghe-bluetooth-true-wireless-ava-freego-pt52-trang-thumb122825.jpg"
+    },
+    {
+      "productcode": "0160079000048",
+      "product_name": "Chuông Cửa Camera Thông Minh 3MP TP-Link Tapo D205",
+      "brand": "Tp-Link",
+      "category_id": 320,
+      "category_name": "Chuông cửa camera",
+      "group_id": "smart_accessories",
+      "group_name": "Thiết bị thông minh & Phụ kiện",
+      "price": 950000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/14239/366050/chuong-cua-camera-thong-minh-3mp-tp-link-tapo-d205-thumb-639124651414904865-600x600.jpg"
+    },
+    {
+      "productcode": "3041094001986",
+      "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+      "brand": "LG",
+      "category_id": 37,
+      "category_name": "Tivi",
+      "group_id": "appliances_kitchen",
+      "group_name": "Điện gia dụng & Nhà bếp",
+      "price": 14890000,
+      "image_url": "https://cdn.tgdd.vn/2026/11/timerseo/337726.jpg"
+    },
+    {
+      "productcode": "3051097001790",
+      "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+      "brand": "Samsung",
+      "category_id": 38,
+      "category_name": "Tủ lạnh",
+      "group_id": "appliances_kitchen",
+      "group_name": "Điện gia dụng & Nhà bếp",
+      "price": 7140000,
+      "image_url": "https://cdnv2.tgdd.vn/pim/cdn/images/202611/220325074310.jpg"
+    },
+    {
+      "productcode": "3051099001621",
+      "product_name": "Máy giặt Toshiba Inverter 12 kg AW-DUK1300KV (MK)",
+      "brand": "Toshiba",
+      "category_id": 115,
+      "category_name": "Máy giặt",
+      "group_id": "appliances_kitchen",
+      "group_name": "Điện gia dụng & Nhà bếp",
+      "price": 6990000,
+      "image_url": "https://cdn.tgdd.vn/2026/11/timerseo/313658.jpg"
+    },
+    {
+      "productcode": "1033265000855",
+      "product_name": "Bộ 3 nồi inox 3 đáy nắp kính Sunhouse SHG306",
+      "brand": "Sunhouse",
+      "category_id": 205,
+      "category_name": "Nồi",
+      "group_id": "household",
+      "group_name": "Đồ gia dụng & Tiêu dùng",
+      "price": 550000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/2402/262410/bo-3-inox-3-day-sunhouse-shg306-1-600x600-1.jpg"
+    },
+    {
+      "productcode": "1033187000378",
+      "product_name": "Ly nhựa 2 lớp kèm ống hút 750 ml DMX K750PP53C Xanh lá nhạt",
+      "brand": "Điện Máy Xanh",
+      "category_id": 208,
+      "category_name": "Bình, ly giữ nhiệt",
+      "group_id": "household",
+      "group_name": "Đồ gia dụng & Tiêu dùng",
+      "price": 20000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/5205/323173/ly-nhua-2-lop-kem-ong-hut-750ml-dmx-k750pp53c-xanh-la-nhat-010424-030937-600x600.jpg"
+    },
+    {
+      "productcode": "1033240000889",
+      "product_name": "Bộ 3 hộp đựng thực phẩm nhựa 500 - 1000 - 2000 ml Inochi Hokkaido HIN.HOCN.BO02 Kem",
+      "brand": "Inochi",
+      "category_id": 276,
+      "category_name": "Hộp đựng thực phẩm",
+      "group_id": "household",
+      "group_name": "Đồ gia dụng & Tiêu dùng",
+      "price": 80000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/4929/327251/bo-3-hop-dung-thuc-pham-nhua-500-1000-2000-ml-inochi-hokkaido-hin-hocn-bo02-0-600x600.jpg"
+    },
+    {
+      "productcode": "4845000000145",
+      "product_name": "Máy cạo râu khô và ướt Enchen Mini 6",
+      "brand": "Enchen",
+      "category_id": 174,
+      "category_name": "Máy cạo râu",
+      "group_id": "health_personal_care",
+      "group_name": "Sức khỏe & Chăm sóc cá nhân",
+      "price": 230000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/common/Product/5554/338551/338551-600x600.jpg"
+    },
+    {
+      "productcode": "4842053001086",
+      "product_name": "Máy rửa mặt và massage Halio Hot Pink",
+      "brand": "Halio",
+      "category_id": 177,
+      "category_name": "Máy rửa mặt",
+      "group_id": "health_personal_care",
+      "group_name": "Sức khỏe & Chăm sóc cá nhân",
+      "price": 350000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/8967/229511/halio-facial-hot-pink-638912959854734293-600x600.jpg"
+    },
+    {
+      "productcode": "4845000000137",
+      "product_name": "Bồn ngâm chân massage Philips PPM6501",
+      "brand": "Philips",
+      "category_id": 184,
+      "category_name": "Bồn ngâm chân",
+      "group_id": "health_personal_care",
+      "group_name": "Sức khỏe & Chăm sóc cá nhân",
+      "price": 2790000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9100/338606/bon-ngam-chan-massage-philips-ppm6501-thumb-638845666526151112-300x300.jpg"
+    },
+    {
+      "productcode": "9924325000074",
+      "product_name": "Vali kéo Lock&Lock LTZ618BLK 24 inch Đen",
+      "brand": "Lock&Lock",
+      "category_id": 44,
+      "category_name": "Vali kéo",
+      "group_id": "fashion_sports_travel",
+      "group_name": "Thời trang, Thể thao & Du lịch",
+      "price": 1315000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/8841/354324/vali-keo-lock-lock-ltz618blk-24-inch-den-thumb-638939675299551318-600x600.jpg"
+    },
+    {
+      "productcode": "1314740000062",
+      "product_name": "Xe Đạp Đường Phố City Thống Nhất New 26 26 inch",
+      "brand": "ThốNg NhấT",
+      "category_id": 46,
+      "category_name": "Xe đạp",
+      "group_id": "fashion_sports_travel",
+      "group_name": "Thời trang, Thể thao & Du lịch",
+      "price": 2890000,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/9758/241648/new-26-26-inch-trang1-550x340-1-550x340.jpg"
+    },
+    {
+      "productcode": "9923189000268",
+      "product_name": "Máy khoan pin Finder FD10182123 21V",
+      "brand": "Finder",
+      "category_id": 224,
+      "category_name": "Máy khoan, vặn vít",
+      "group_id": "tools_lighting",
+      "group_name": "Công cụ & Chiếu sáng",
+      "price": 1790000,
+      "image_url": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/4697/342700/may-khoan-pin-finder-fd10182123-21v-thumb1-638937455789523581-600x600.jpg"
+    },
+    {
+      "productcode": "9923381000303",
+      "product_name": "Kìm nhọn (công nghiệp) Tolsen 10022 20.5 cm",
+      "brand": "Tolsen",
+      "category_id": 238,
+      "category_name": "Kìm",
+      "group_id": "tools_lighting",
+      "group_name": "Công cụ & Chiếu sáng",
+      "price": 176727,
+      "image_url": "https://cdn.tgdd.vn/Products/Images/8860/260261/kim-nhon-cong-nghiep-8-tolsen-10022-240322-110056-600x600.jpg"
+    }
+  ]
+}

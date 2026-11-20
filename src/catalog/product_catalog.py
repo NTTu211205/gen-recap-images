@@ -8,7 +8,9 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
 
-from src.catalog.product_groups import group_products, load_category_groups
+from src.catalog.product_groups import (
+    group_products, load_category_groups, product_scale,
+)
 from src.core.concurrency import ordered_parallel_map
 from src.prompts.products import build_group_image_prompts
 
@@ -98,6 +100,9 @@ def resolve_and_rank(
                 "group_name": display_group["group_name"],
                 "preserve_interior": display_group.get(
                     "preserve_interior", False,
+                ),
+                "scale": product_scale(
+                    name, float(display_group.get("scale", 0.75)),
                 ),
                 "lookup_source": "catalog",
                 "quantity_sold": catalog_metric(record.get("quantity_sold")),
@@ -203,6 +208,9 @@ def build_catalog_plan(
         }.values())
         category["order"] = len(result)
         category["omitted_count"] = 0
+        category["scale"] = max(
+            float(item.get("scale", 0.75)) for item in selected
+        )
         result.append(category)
         descriptions = [item["description_en"] for item in selected]
         if any(description is None for description in descriptions):
@@ -227,6 +235,7 @@ def build_catalog_plan(
             category["request_settings"][key] = {
                 "productcode": selected[index]["productcode"],
                 "preserve_interior": selected[index]["preserve_interior"],
+                "scale": selected[index].get("scale", 0.75),
             }
             requests[key] = {
                 "model": "MWG", "translate": False, "prompt": prompt,

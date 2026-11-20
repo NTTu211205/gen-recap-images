@@ -130,14 +130,40 @@ def _load_cluster_products(paths: list[Path]) -> list[Image.Image]:
     return products
 
 
-def _compose_cluster_row(products: list[Image.Image]) -> Image.Image:
+def _scaled_cluster_items(
+    products: list[Image.Image], scales: list[float] | None,
+) -> list[Image.Image]:
+    if scales is None:
+        thumbnails = [
+            ImageOps.contain(product, (580, 760), Image.Resampling.LANCZOS)
+            for product in products
+        ]
+        thumbnails.sort(key=lambda image: image.height, reverse=True)
+        return thumbnails
+    if len(scales) != len(products):
+        raise ValueError("Product scale count must match product count")
+    ranked = []
+    for product, raw_scale in zip(products, scales):
+        scale = max(0.38, min(1.0, float(raw_scale)))
+        aspect = product.width / max(1, product.height)
+        narrow_damp = (
+            0.84 + 0.16 * (aspect / 0.65) if aspect < 0.65 else 1.0
+        )
+        box = (
+            max(1, round(700 * scale)),
+            max(1, round(600 * scale * narrow_damp)),
+        )
+        thumbnail = ImageOps.contain(product, box, Image.Resampling.LANCZOS)
+        ranked.append((round(scale, 2), thumbnail.height, thumbnail))
+    ranked.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    return [item[2] for item in ranked]
+
+
+def _compose_cluster_row(
+    products: list[Image.Image], scales: list[float] | None = None,
+) -> Image.Image:
     """Place a tall hero behind its companions on a shared ground plane."""
-    thumbnails = [
-        ImageOps.contain(product, (580, 760), Image.Resampling.LANCZOS)
-        for product in products
-    ]
-    # Tall objects sit behind lower objects rather than floating above them.
-    thumbnails.sort(key=lambda image: image.height, reverse=True)
+    thumbnails = _scaled_cluster_items(products, scales)
     hero = thumbnails[0]
     order = [hero]
     for index, product in enumerate(thumbnails[1:], 1):
@@ -152,13 +178,20 @@ def _compose_cluster_row(products: list[Image.Image]) -> Image.Image:
             order.append(product)
     positions = []
     x = 20
-    baseline = hero.height + 24
+    overlap_ratio = 0.22 if scales is None else 0.48
+    hero_lift = 20 if scales is None else 42
+    baseline = max(
+        hero.height + hero_lift + 4,
+        max(product.height for product in order) + 4,
+    )
     for index, product in enumerate(order):
-        bottom = baseline - 20 if product is hero else baseline
+        bottom = baseline - hero_lift if product is hero else baseline
         positions.append((product, x, bottom - product.height))
         x += product.width
         if index + 1 < len(order):
-            x -= round(min(product.width, order[index + 1].width) * 0.22)
+            x -= round(
+                min(product.width, order[index + 1].width) * overlap_ratio
+            )
     size = (x + 20, baseline + 24)
     shadow = Image.new("RGBA", size)
     draw = ImageDraw.Draw(shadow)
@@ -179,13 +212,24 @@ def _compose_cluster_row(products: list[Image.Image]) -> Image.Image:
     return row
 
 
-def merge_product_cutouts(paths: list[Path], output: Path) -> Path:
+def merge_product_cutouts(
+    paths: list[Path], output: Path, *, scales: list[float] | None = None,
+) -> Path:
     """Keep every product in a compact, layered display without grid cells."""
     if not paths:
         raise ValueError("No product cutouts to merge")
+    if scales is not None and len(scales) != len(paths):
+        raise ValueError("Product scale count must match path count")
     if len(paths) == 1:
         return paths[0]
     products = _load_cluster_products(paths)
+    if scales is not None:
+        paired = sorted(
+            zip(products, scales),
+            key=lambda item: float(item[1]), reverse=True,
+        )
+        products = [item[0] for item in paired]
+        scales = [float(item[1]) for item in paired]
     columns = 3 if len(products) <= 6 else 4
     row_count = math.ceil(len(products) / columns)
     per_row, extra = divmod(len(products), row_count)
@@ -193,7 +237,12 @@ def merge_product_cutouts(paths: list[Path], output: Path) -> Path:
     offset = 0
     for index in range(row_count):
         count = per_row + (index < extra)
-        row = _compose_cluster_row(products[offset:offset + count])
+        row_scales = (
+            None if scales is None else scales[offset:offset + count]
+        )
+        row = _compose_cluster_row(
+            products[offset:offset + count], row_scales,
+        )
         rows.append(ImageOps.contain(
             row, (984, 984), Image.Resampling.LANCZOS,
         ))

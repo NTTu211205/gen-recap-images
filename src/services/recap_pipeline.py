@@ -102,9 +102,14 @@ def generate_recap(
                         or not all(k in request_assets for k in keys)
                     ):
                         continue
+                    scales = [
+                        float(request_settings.get(k, {}).get("scale", 1.0))
+                        for k in keys
+                    ]
                     combined = merge_product_cutouts(
                         [request_assets[k] for k in keys],
                         run_dir / f"{category['key']}_group_cutout.png",
+                        scales=scales,
                     )
                     assets[category["key"]] = combined
                     category["image_path"] = combined.name
@@ -144,6 +149,10 @@ def _compose_pages(
             category_names=names,
             category_icons={
                 category["key"]: category["id"] for category in page
+            },
+            category_scales={
+                category["key"]: float(category.get("scale", 1.0))
+                for category in page
             },
             background_path=background_for_groups(len(page)),
         )
