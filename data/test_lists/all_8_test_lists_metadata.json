@@ -1,0 +1,1126 @@
+[
+  {
+    "list_number": 1,
+    "total_groups": 1,
+    "total_products": 4,
+    "file_name": "list_1_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_1_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          },
+          {
+            "productcode": "2440931001196",
+            "product_name": "Máy tính bảng Samsung Galaxy Tab A11+ WiFi 6GB/128GB",
+            "brand": "Samsung",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 7590000.0
+          },
+          {
+            "productcode": "0131491005411",
+            "product_name": "iPhone 18 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 41990000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 2,
+    "total_groups": 2,
+    "total_products": 6,
+    "file_name": "list_2_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_2_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          },
+          {
+            "productcode": "2440931001196",
+            "product_name": "Máy tính bảng Samsung Galaxy Tab A11+ WiFi 6GB/128GB",
+            "brand": "Samsung",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 7590000.0
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "0232391002614",
+            "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+            "brand": "Kidcare",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2250000.0
+          },
+          {
+            "productcode": "0163346000577",
+            "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+            "brand": "Ava+",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 290000.0
+          },
+          {
+            "productcode": "0160079000048",
+            "product_name": "Chuông Cửa Camera Thông Minh 3MP TP-Link Tapo D205",
+            "brand": "Tp-Link",
+            "category_id": "320",
+            "category_name": "Chuông cửa camera",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 1200000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 3,
+    "total_groups": 3,
+    "total_products": 6,
+    "file_name": "list_3_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_3_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 4,
+    "total_groups": 4,
+    "total_products": 8,
+    "file_name": "list_4_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_4_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          }
+        ]
+      },
+      {
+        "group_id": "fashion_sports_travel",
+        "group_name": "Thời trang, Thể thao & Du lịch",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "9924325000074",
+            "product_name": "Vali kéo Lock&Lock LTZ618BLK 24 inch Đen",
+            "brand": "Lock&Lock",
+            "category_id": "44",
+            "category_name": "Vali kéo",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 2739000.0
+          },
+          {
+            "productcode": "1314740000062",
+            "product_name": "Xe Đạp Đường Phố City Thống Nhất New 26 26 inch",
+            "brand": "ThốNg NhấT",
+            "category_id": "46",
+            "category_name": "Xe đạp",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 3690000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 5,
+    "total_groups": 5,
+    "total_products": 10,
+    "file_name": "list_5_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_5_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0232391002614",
+            "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+            "brand": "Kidcare",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2250000.0
+          },
+          {
+            "productcode": "0163346000577",
+            "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+            "brand": "Ava+",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 290000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "4845000000145",
+            "product_name": "Máy cạo râu khô và ướt Enchen Mini 6",
+            "brand": "Enchen",
+            "category_id": "174",
+            "category_name": "Máy cạo râu",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 290000.0
+          },
+          {
+            "productcode": "4842053001086",
+            "product_name": "Máy rửa mặt và massage Halio Hot Pink",
+            "brand": "Halio",
+            "category_id": "177",
+            "category_name": "Máy rửa mặt",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 620000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 6,
+    "total_groups": 6,
+    "total_products": 12,
+    "file_name": "list_6_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_6_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0232391002614",
+            "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+            "brand": "Kidcare",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2250000.0
+          },
+          {
+            "productcode": "0163346000577",
+            "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+            "brand": "Ava+",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 290000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "4845000000145",
+            "product_name": "Máy cạo râu khô và ướt Enchen Mini 6",
+            "brand": "Enchen",
+            "category_id": "174",
+            "category_name": "Máy cạo râu",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 290000.0
+          },
+          {
+            "productcode": "4842053001086",
+            "product_name": "Máy rửa mặt và massage Halio Hot Pink",
+            "brand": "Halio",
+            "category_id": "177",
+            "category_name": "Máy rửa mặt",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 620000.0
+          }
+        ]
+      },
+      {
+        "group_id": "tools_lighting",
+        "group_name": "Công cụ & Chiếu sáng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "9923189000268",
+            "product_name": "Máy khoan pin Finder FD10182123 21V",
+            "brand": "Finder",
+            "category_id": "224",
+            "category_name": "Máy khoan, vặn vít",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 3295000.0
+          },
+          {
+            "productcode": "9923381000303",
+            "product_name": "Kìm nhọn (công nghiệp) Tolsen 10022 20.5 cm",
+            "brand": "Tolsen",
+            "category_id": "238",
+            "category_name": "Kìm",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 176727.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 7,
+    "total_groups": 7,
+    "total_products": 14,
+    "file_name": "list_7_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_7_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0232391002614",
+            "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+            "brand": "Kidcare",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2250000.0
+          },
+          {
+            "productcode": "0163346000577",
+            "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+            "brand": "Ava+",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 290000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "4845000000145",
+            "product_name": "Máy cạo râu khô và ướt Enchen Mini 6",
+            "brand": "Enchen",
+            "category_id": "174",
+            "category_name": "Máy cạo râu",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 290000.0
+          },
+          {
+            "productcode": "4842053001086",
+            "product_name": "Máy rửa mặt và massage Halio Hot Pink",
+            "brand": "Halio",
+            "category_id": "177",
+            "category_name": "Máy rửa mặt",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 620000.0
+          }
+        ]
+      },
+      {
+        "group_id": "tools_lighting",
+        "group_name": "Công cụ & Chiếu sáng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "9923189000268",
+            "product_name": "Máy khoan pin Finder FD10182123 21V",
+            "brand": "Finder",
+            "category_id": "224",
+            "category_name": "Máy khoan, vặn vít",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 3295000.0
+          },
+          {
+            "productcode": "9923381000303",
+            "product_name": "Kìm nhọn (công nghiệp) Tolsen 10022 20.5 cm",
+            "brand": "Tolsen",
+            "category_id": "238",
+            "category_name": "Kìm",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 176727.0
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "1033265000855",
+            "product_name": "Bộ 3 nồi inox 3 đáy nắp kính Sunhouse SHG306",
+            "brand": "Sunhouse",
+            "category_id": "205",
+            "category_name": "Nồi",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 982000.0
+          },
+          {
+            "productcode": "1033187000378",
+            "product_name": "Ly nhựa 2 lớp kèm ống hút 750 ml DMX K750PP53C Xanh lá nhạt",
+            "brand": "Điện Máy Xanh",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 20000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "list_number": 8,
+    "total_groups": 8,
+    "total_products": 20,
+    "file_name": "list_8_groups.json",
+    "file_path": "/Users/thanhtu/mwg/MWG-VideoRecap/data/test_lists/list_8_groups.json",
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0131491004724",
+            "product_name": "Điện thoại iPhone 17 Pro Max 256GB",
+            "brand": "iPhone (Apple)",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0
+          },
+          {
+            "productcode": "2440931000946",
+            "product_name": "Máy tính bảng iPad A16 WiFi 128GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 12790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "0220042003180",
+            "product_name": "Laptop HP 245 G10 - B8PF9AT (R5 7530U, 8GB, 512GB, Full HD, Win11)",
+            "brand": "Hp",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 23490000.0
+          },
+          {
+            "productcode": "3640045000017",
+            "product_name": "Máy in laser trắng đen đơn năng Brother HL-L2321D",
+            "brand": "Brother",
+            "category_id": "75",
+            "category_name": "Máy in",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 3490000.0
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "0232391002614",
+            "product_name": "Đồng hồ định vị trẻ em Kidcare Sight S1",
+            "brand": "Kidcare",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2250000.0
+          },
+          {
+            "productcode": "0163346000577",
+            "product_name": "Tai nghe Bluetooth True Wireless AVA+ FreeGo PT52",
+            "brand": "Ava+",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 290000.0
+          },
+          {
+            "productcode": "0160079000048",
+            "product_name": "Chuông Cửa Camera Thông Minh 3MP TP-Link Tapo D205",
+            "brand": "Tp-Link",
+            "category_id": "320",
+            "category_name": "Chuông cửa camera",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 1200000.0
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "3041094001986",
+            "product_name": "Smart Tivi NanoCell LG AI 4K 55 inch 55NANO80ASA",
+            "brand": "LG",
+            "category_id": "37",
+            "category_name": "Tivi",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 17490000.0
+          },
+          {
+            "productcode": "3051097001790",
+            "product_name": "Tủ lạnh Samsung Inverter 236 lít RT22M4032BY/SV",
+            "brand": "Samsung",
+            "category_id": "38",
+            "category_name": "Tủ lạnh",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8030000.0
+          },
+          {
+            "productcode": "3051099001621",
+            "product_name": "Máy giặt Toshiba Inverter 12 kg AW-DUK1300KV (MK)",
+            "brand": "Toshiba",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 9320000.0
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "4845000000145",
+            "product_name": "Máy cạo râu khô và ướt Enchen Mini 6",
+            "brand": "Enchen",
+            "category_id": "174",
+            "category_name": "Máy cạo râu",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 290000.0
+          },
+          {
+            "productcode": "4842053001086",
+            "product_name": "Máy rửa mặt và massage Halio Hot Pink",
+            "brand": "Halio",
+            "category_id": "177",
+            "category_name": "Máy rửa mặt",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 620000.0
+          },
+          {
+            "productcode": "4845000000137",
+            "product_name": "Bồn ngâm chân massage Philips PPM6501",
+            "brand": "Philips",
+            "category_id": "184",
+            "category_name": "Bồn ngâm chân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 3790000.0
+          }
+        ]
+      },
+      {
+        "group_id": "tools_lighting",
+        "group_name": "Công cụ & Chiếu sáng",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "9923189000268",
+            "product_name": "Máy khoan pin Finder FD10182123 21V",
+            "brand": "Finder",
+            "category_id": "224",
+            "category_name": "Máy khoan, vặn vít",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 3295000.0
+          },
+          {
+            "productcode": "9923381000303",
+            "product_name": "Kìm nhọn (công nghiệp) Tolsen 10022 20.5 cm",
+            "brand": "Tolsen",
+            "category_id": "238",
+            "category_name": "Kìm",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 176727.0
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "1033265000855",
+            "product_name": "Bộ 3 nồi inox 3 đáy nắp kính Sunhouse SHG306",
+            "brand": "Sunhouse",
+            "category_id": "205",
+            "category_name": "Nồi",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 982000.0
+          },
+          {
+            "productcode": "1033187000378",
+            "product_name": "Ly nhựa 2 lớp kèm ống hút 750 ml DMX K750PP53C Xanh lá nhạt",
+            "brand": "Điện Máy Xanh",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 20000.0
+          },
+          {
+            "productcode": "1033240000889",
+            "product_name": "Bộ 3 hộp đựng thực phẩm nhựa 500 - 1000 - 2000 ml Inochi Hokkaido HIN.HOCN.BO02 Kem",
+            "brand": "Inochi",
+            "category_id": "276",
+            "category_name": "Hộp đựng thực phẩm",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 80000.0
+          }
+        ]
+      },
+      {
+        "group_id": "fashion_sports_travel",
+        "group_name": "Thời trang, Thể thao & Du lịch",
+        "product_count": 2,
+        "products": [
+          {
+            "productcode": "9924325000074",
+            "product_name": "Vali kéo Lock&Lock LTZ618BLK 24 inch Đen",
+            "brand": "Lock&Lock",
+            "category_id": "44",
+            "category_name": "Vali kéo",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 2739000.0
+          },
+          {
+            "productcode": "1314740000062",
+            "product_name": "Xe Đạp Đường Phố City Thống Nhất New 26 26 inch",
+            "brand": "ThốNg NhấT",
+            "category_id": "46",
+            "category_name": "Xe đạp",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 3690000.0
+          }
+        ]
+      }
+    ]
+  }
+]

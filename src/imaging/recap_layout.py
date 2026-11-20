@@ -14,6 +14,34 @@ from src.imaging.product_cutout import (
 )
 from src.imaging.recap_badges import draw_category_badge
 
+# Tạm thời tắt phần gắn badges vào recap theo yêu cầu (đặt True để bật lại)
+ENABLE_CATEGORY_BADGES = os.getenv(
+    "ENABLE_CATEGORY_BADGES", "false"
+).lower() in ("true", "1", "yes")
+
+# Hệ số scale kích thước sản phẩm (mặc định 1.5 theo yêu cầu)
+PRODUCT_SCALE_MULTIPLIER = float(os.getenv("PRODUCT_SCALE_MULTIPLIER", "1.5"))
+
+# Header và Mascot overlay (định vị theo tọa độ canvas 1024x1024)
+RECAP_HEADER_ENABLED = os.getenv(
+    "RECAP_HEADER_ENABLED", "true"
+).lower() in ("true", "1", "yes")
+RECAP_MASCOT_ENABLED = os.getenv(
+    "RECAP_MASCOT_ENABLED", "true"
+).lower() in ("true", "1", "yes")
+
+RECAP_HEADER_WIDTH = int(os.getenv("RECAP_HEADER_WIDTH", "365"))
+RECAP_HEADER_POS = (
+    int(os.getenv("RECAP_HEADER_POS_X", "15")),
+    int(os.getenv("RECAP_HEADER_POS_Y", "0")),
+)
+
+RECAP_MASCOT_WIDTH = int(os.getenv("RECAP_MASCOT_WIDTH", "180"))
+RECAP_MASCOT_POS = (
+    int(os.getenv("RECAP_MASCOT_POS_X", "560")),
+    int(os.getenv("RECAP_MASCOT_POS_Y", "20")),
+)
+
 LEGACY_CATEGORY_LABELS = {
     'appliances': 'Điện gia dụng\n& Thiết bị nhà bếp',
     'phones': 'Điện thoại\n& Máy tính bảng',
@@ -145,8 +173,14 @@ def render_category_badges(
         | tuple[tuple[int, int, int, int], str, str, float]
     ],
     font_path: Path | None = None,
+    enabled: bool = True,
 ) -> Path:
     """Add only category badges; the background owns its header and frame."""
+    output_path = image_path.with_name(f"{image_path.stem}_final.png")
+    if not enabled:
+        with Image.open(image_path) as source:
+            source.convert("RGB").save(output_path)
+        return output_path
     font_path = find_font() if font_path is None else font_path
     with Image.open(image_path) as source:
         image = source.convert("RGB")
@@ -166,7 +200,6 @@ def render_category_badges(
             draw_category_badge(
                 image, pixel_box, label, group_id, font_path, angle=angle,
             )
-    output_path = image_path.with_name(f"{image_path.stem}_final.png")
     image.save(output_path)
     return output_path
 
@@ -199,14 +232,44 @@ GROUP_SLOT_INDEX_7 = {
     "phones_tablets": 6,
 }
 GROUP_BADGES_7 = {
-    "smart_accessories": (715, 240, 970, 300),
-    "computers_office": (75, 395, 315, 455),
-    "health_personal_care": (355, 405, 620, 465),
-    "appliances_kitchen": (675, 500, 915, 560),
-    "tools_lighting": (85, 620, 325, 680),
-    "fashion_sports_travel": (85, 620, 325, 680),
-    "household": (380, 675, 640, 735),
-    "phones_tablets": (690, 690, 950, 750),
+    "smart_accessories": (670, 180, 840, 236),
+    "computers_office": (110, 400, 280, 456),
+    "health_personal_care": (355, 400, 525, 456),
+    "appliances_kitchen": (695, 455, 865, 511),
+    "tools_lighting": (97, 620, 267, 676),
+    "fashion_sports_travel": (97, 620, 267, 676),
+    "household": (445, 642, 615, 698),
+    "phones_tablets": (720, 666, 890, 722),
+}
+GROUP_SLOTS_7 = {
+    "smart_accessories": (660, 40, 850, 195),
+    "computers_office": (85, 240, 305, 410),
+    "health_personal_care": (340, 240, 540, 410),
+    "appliances_kitchen": (670, 280, 890, 465),
+    "tools_lighting": (95, 460, 270, 630),
+    "fashion_sports_travel": (95, 460, 270, 630),
+    "household": (430, 480, 630, 650),
+    "phones_tablets": (720, 515, 890, 675),
+}
+GROUP_BADGE_ANGLES_7 = {
+    "smart_accessories": 0.0,
+    "computers_office": 0.0,
+    "health_personal_care": 0.0,
+    "appliances_kitchen": 0.0,
+    "tools_lighting": 0.0,
+    "fashion_sports_travel": 0.0,
+    "household": 0.0,
+    "phones_tablets": 0.0,
+}
+GROUP_SLOT_TILTS_7 = {
+    "smart_accessories": 0.0,
+    "computers_office": 0.0,
+    "health_personal_care": 0.0,
+    "appliances_kitchen": 0.0,
+    "tools_lighting": 0.0,
+    "fashion_sports_travel": 0.0,
+    "household": 0.0,
+    "phones_tablets": 0.0,
 }
 
 
@@ -241,36 +304,39 @@ GROUP_BADGE_ANGLES_8 = {
     "phones_tablets": -13.5,
 }
 GROUP_SLOTS_8 = {
-    "computers_office": (315, 195, 535, 360),
+    "computers_office": (375, 195, 595, 385),
     "smart_accessories": (665, 175, 875, 345),
     "fashion_sports_travel": (105, 305, 315, 470),
     "health_personal_care": (425, 360, 645, 490),
     "appliances_kitchen": (715, 370, 915, 515),
     "tools_lighting": (140, 490, 360, 625),
     "household": (395, 565, 615, 725),
-    "phones_tablets": (670, 510, 890, 650),
+    "phones_tablets": (685, 510, 905, 695),
 }
 GROUP_SLOT_TILTS_8 = {
-    "computers_office": -5.0,
+    "computers_office": -3.0,
     "smart_accessories": 18.0,
     "fashion_sports_travel": 0.0,
     "health_personal_care": 0.0,
     "appliances_kitchen": 16.0,
     "tools_lighting": 0.0,
     "household": 0.0,
-    "phones_tablets": -13.0,
+    "phones_tablets": -6.0,
 }
 SLOT_BADGES_3 = (
-    ((635, 505, 845, 575), 15.0),
-    ((210, 590, 425, 650), -15.0),
-    ((650, 700, 865, 760), 15.0),
+    ((597, 485, 772, 540), 14.0),
+    ((302, 595, 477, 650), 0.0),
+    ((597, 705, 772, 760), 14.0),
 )
+SLOT_TILTS_3 = (14.0, 0.0, 14.0)
+
 SLOT_BADGES_4 = (
-    ((395, 460, 595, 520), 12.0),
-    ((150, 570, 315, 625), -12.0),
-    ((635, 575, 845, 630), 15.0),
-    ((370, 700, 580, 755), 16.0),
+    ((390, 480, 565, 535), 0.0),
+    ((145, 595, 315, 645), 0.0),
+    ((635, 595, 805, 645), 0.0),
+    ((380, 710, 555, 760), 0.0),
 )
+SLOT_TILTS_4 = (0.0, 0.0, 0.0, 0.0)
 
 
 def category_layout(
@@ -286,36 +352,38 @@ def category_layout(
     result = []
     slots = list(IMAGE_SLOTS_BY_COUNT[count])
     if count == 3:
-        for (key, name), slot, (badge, angle) in zip(
-            names.items(), slots, SLOT_BADGES_3,
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_3, SLOT_TILTS_3,
         ):
             result.append({
                 "key": key, "slot": slot, "badge": badge, "label": name,
-                "angle": angle, "tilt": 0.0,
+                "angle": angle, "tilt": tilt,
             })
         return result
     if count == 4:
-        for (key, name), slot, (badge, angle) in zip(
-            names.items(), slots, SLOT_BADGES_4,
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_4, SLOT_TILTS_4,
         ):
             result.append({
                 "key": key, "slot": slot, "badge": badge, "label": name,
-                "angle": angle, "tilt": 0.0,
+                "angle": angle, "tilt": tilt,
             })
         return result
     if count in (7, 8) and category_icons:
         mapping = GROUP_SLOT_INDEX_8 if count == 8 else GROUP_SLOT_INDEX_7
         badge_map = GROUP_BADGES_8 if count == 8 else GROUP_BADGES_7
+        slot_map = GROUP_SLOTS_8 if count == 8 else GROUP_SLOTS_7
+        angle_map = (
+            GROUP_BADGE_ANGLES_8 if count == 8 else GROUP_BADGE_ANGLES_7
+        )
+        tilt_map = GROUP_SLOT_TILTS_8 if count == 8 else GROUP_SLOT_TILTS_7
         assigned: dict[str, tuple[int, tuple[int, int, int, int]]] = {}
         used = set()
         for key in names:
             group_id = category_icons.get(key, key)
             idx = mapping.get(group_id)
             if idx is not None and idx not in used:
-                slot = (
-                    GROUP_SLOTS_8.get(group_id, slots[idx]) if count == 8
-                    else slots[idx]
-                )
+                slot = slot_map.get(group_id, slots[idx])
                 assigned[key] = (idx, slot)
                 used.add(idx)
         remaining = [i for i in range(count) if i not in used]
@@ -328,11 +396,8 @@ def category_layout(
             idx, slot = assigned[key]
             group_id = category_icons.get(key, key)
             badge = badge_map.get(group_id)
-            angle = 0.0
-            tilt = 0.0
-            if count == 8:
-                angle = GROUP_BADGE_ANGLES_8.get(group_id, 0.0)
-                tilt = GROUP_SLOT_TILTS_8.get(group_id, 0.0)
+            angle = angle_map.get(group_id, 0.0)
+            tilt = tilt_map.get(group_id, 0.0)
             if badge is None:
                 left, top, right, bottom = slot
                 badge = (left, bottom - 16, right, bottom + 40)
@@ -357,6 +422,7 @@ def _slot_target_size(
     *,
     group_scale: float | None,
     item_count: int,
+    scale_multiplier: float = PRODUCT_SCALE_MULTIPLIER,
 ) -> tuple[int, int]:
     width, height = slot_size
     if group_scale is None:
@@ -372,9 +438,12 @@ def _slot_target_size(
         elif aspect < 0.55:
             max_h *= 0.88
     else:
-        max_w = width * min(1.0, 0.84 + 0.16 * scale)
+        max_w = width * (0.84 + 0.16 * scale)
         max_h = min(height * 0.90, width * 0.72) * scale_factor
-    return max(1, round(max_w)), max(1, round(max_h))
+    return (
+        max(1, round(max_w * scale_multiplier)),
+        max(1, round(max_h * scale_multiplier)),
+    )
 
 
 def compose_recap(
@@ -385,6 +454,8 @@ def compose_recap(
     category_icons: dict[str, str] | None = None,
     category_scales: dict[str, float] | None = None,
     background_path: Path | None = None,
+    header_path: Path | None = None,
+    mascot_path: Path | None = None,
 ) -> Path:
     """Build the scene in code; generated images stay inside their slots."""
     if category_names is None:
@@ -486,6 +557,46 @@ def compose_recap(
                 ((left + right) // 2, (top + bottom) // 2),
                 "Không có sản phẩm", anchor="mm", font=font, fill="white",
             )
+    base_dir = background_path.parent if background_path else BACKGROUND_DIR
+    if RECAP_HEADER_ENABLED:
+        target_header_path = (
+            base_dir / "recap_header.png"
+            if header_path is None
+            else header_path
+        )
+        if target_header_path.is_file():
+            with Image.open(target_header_path) as header_img:
+                h_rgba = header_img.convert("RGBA")
+                target_w = max(1, round(RECAP_HEADER_WIDTH * scale_x))
+                target_h = max(
+                    1, round(target_w * header_img.height / header_img.width)
+                )
+                h_resized = h_rgba.resize(
+                    (target_w, target_h), Image.Resampling.LANCZOS,
+                )
+                pos_x = round(RECAP_HEADER_POS[0] * scale_x)
+                pos_y = round(RECAP_HEADER_POS[1] * scale_y)
+                image.paste(h_resized, (pos_x, pos_y), h_resized)
+    if RECAP_MASCOT_ENABLED:
+        target_mascot_path = (
+            base_dir / "recap_mascot.png"
+            if mascot_path is None
+            else mascot_path
+        )
+        if target_mascot_path.is_file():
+            with Image.open(target_mascot_path) as mascot_img:
+                m_rgba = mascot_img.convert("RGBA")
+                target_w = max(1, round(RECAP_MASCOT_WIDTH * scale_x))
+                target_h = max(
+                    1, round(target_w * mascot_img.height / mascot_img.width)
+                )
+                m_resized = m_rgba.resize(
+                    (target_w, target_h), Image.Resampling.LANCZOS,
+                )
+                pos_x = round(RECAP_MASCOT_POS[0] * scale_x)
+                pos_y = round(RECAP_MASCOT_POS[1] * scale_y)
+                # Mascot đè lên sản phẩm (composited on top of products)
+                image.paste(m_resized, (pos_x, pos_y), m_resized)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     image.save(output_path)
     # The supplied background already contains its own header and podiums.
@@ -497,4 +608,5 @@ def compose_recap(
              item.get("angle", 0.0))
             for item in layout
         ],
+        enabled=ENABLE_CATEGORY_BADGES,
     )

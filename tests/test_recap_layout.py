@@ -149,3 +149,34 @@ class RecapLayoutTests(unittest.TestCase):
                 self.assertEqual(image.getpixel((0, 1198)), (40, 71, 135))
                 self.assertEqual(image.getpixel((510, 260)), (40, 71, 135))
                 self.assertNotEqual(image.tobytes(), source.tobytes())
+
+    def test_header_and_mascot_composited_over_products(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            background = root / "background.png"
+            header = root / "recap_header.png"
+            mascot = root / "recap_mascot.png"
+            asset = root / "product.png"
+
+            # 1024x1024 blue background
+            Image.new("RGB", (1024, 1024), (0, 0, 255)).save(background)
+            # Solid yellow header
+            Image.new("RGBA", (430, 285), (255, 255, 0, 255)).save(header)
+            # Solid green mascot
+            Image.new("RGBA", (180, 140), (0, 255, 0, 255)).save(mascot)
+            # Solid red product cutout covering upper area
+            Image.new("RGBA", (800, 800), (255, 0, 0, 255)).save(asset)
+
+            result = compose_recap(
+                {"phone": asset}, {"phone": ["Phone"]}, root / "recap.png",
+                category_names={"phone": "Điện thoại"},
+                background_path=background,
+                header_path=header,
+                mascot_path=mascot,
+            )
+            with Image.open(result) as image:
+                # Header position (15, 0) inside (15, 0, 380, 242) -> yellow
+                self.assertEqual(image.getpixel((100, 50)), (255, 255, 0))
+                # Mascot at (560, 20) is inside (560, 20, 740, 160) -> green
+                # Mascot must be composited ON TOP of product
+                self.assertEqual(image.getpixel((600, 50)), (0, 255, 0))
