@@ -180,3 +180,70 @@ class RecapLayoutTests(unittest.TestCase):
                 # Mascot at (560, 20) is inside (560, 20, 740, 160) -> green
                 # Mascot must be composited ON TOP of product
                 self.assertEqual(image.getpixel((600, 50)), (0, 255, 0))
+
+    def test_header_and_mascot_per_count_config(self):
+        from src.imaging.background_templates import (
+            HEADER_SLOTS_BY_COUNT, MASCOT_SLOTS_BY_COUNT,
+        )
+        from src.imaging.recap_layout import (
+            resolve_header_config, resolve_mascot_config,
+        )
+
+        for count in range(1, 9):
+            h_pos, h_w, _ = resolve_header_config(count)
+            m_pos, m_w, _ = resolve_mascot_config(count)
+            self.assertEqual(h_pos, HEADER_SLOTS_BY_COUNT[count]["pos"])
+            self.assertEqual(h_w, HEADER_SLOTS_BY_COUNT[count]["width"])
+            self.assertEqual(m_pos, MASCOT_SLOTS_BY_COUNT[count]["pos"])
+            self.assertEqual(m_w, MASCOT_SLOTS_BY_COUNT[count]["width"])
+
+        # Test compose_recap adapts to different counts
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bg = root / "bg.png"
+            hdr = root / "recap_header.png"
+            msc = root / "recap_mascot.png"
+            Image.new("RGB", (1024, 1024), "blue").save(bg)
+            Image.new("RGBA", (100, 100), "yellow").save(hdr)
+            Image.new("RGBA", (100, 100), "green").save(msc)
+
+            asset = root / "p.png"
+            Image.new("RGBA", (10, 10), "red").save(asset)
+            names = {str(i): f"Cat {i}" for i in range(5)}
+            groups = {str(i): [f"p{i}"] for i in range(5)}
+            images = {str(i): asset for i in range(5)}
+
+            with patch.dict(
+                HEADER_SLOTS_BY_COUNT,
+                {5: {"pos": (200, 100), "width": 80}},
+            ):
+                res = compose_recap(
+                    images, groups,
+                    root / "out.png",
+                    category_names=names,
+                    background_path=bg,
+                    header_path=hdr,
+                    mascot_path=msc,
+                )
+                with Image.open(res) as img:
+                    # In count 5, header is pasted at (200, 100)
+                    self.assertEqual(img.getpixel((210, 110)), (255, 255, 0))
+                    # Old default (15, 0) should still be background blue
+                    self.assertEqual(img.getpixel((15, 0)), (0, 0, 255))
+
+    def test_case_2_fan_tilts_and_case_7_slots(self):
+        names_2 = {"left": "Nhóm 1", "right": "Nhóm 2"}
+        layout_2 = category_layout(names_2)
+        self.assertEqual(len(layout_2), 2)
+        # Left tilts left (+8.0°), Right tilts right (-8.0°)
+        self.assertEqual(layout_2[0]["tilt"], 8.0)
+        self.assertEqual(layout_2[1]["tilt"], -8.0)
+        # Horizontal placement: slots are side by side at same baseline
+        self.assertEqual(layout_2[0]["slot"][3], layout_2[1]["slot"][3])
+        self.assertLess(layout_2[0]["slot"][2], layout_2[1]["slot"][0])
+
+        names_7 = {str(i): f"Nhóm {i}" for i in range(7)}
+        layout_7 = category_layout(names_7)
+        self.assertEqual(len(layout_7), 7)
+        for item in layout_7:
+            self.assertEqual(item["tilt"], 0.0)

@@ -7,7 +7,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from src.core.paths import BACKGROUND_DIR
 from src.imaging.background_templates import (
-    GROUPS_PER_PAGE, IMAGE_SLOTS_BY_COUNT, background_for_groups,
+    GROUPS_PER_PAGE, HEADER_SLOTS_BY_COUNT, IMAGE_SLOTS_BY_COUNT,
+    MASCOT_SLOTS_BY_COUNT, background_for_groups,
 )
 from src.imaging.product_cutout import (
     remove_product_background, save_product_cutout,
@@ -41,6 +42,83 @@ RECAP_MASCOT_POS = (
     int(os.getenv("RECAP_MASCOT_POS_X", "560")),
     int(os.getenv("RECAP_MASCOT_POS_Y", "20")),
 )
+
+
+def resolve_header_config(
+    count: int,
+) -> tuple[tuple[int, int], int, int | None]:
+    """Resolve (pos, width, height) for header for a given group count.
+
+    Defaults come from HEADER_SLOTS_BY_COUNT[count], with fallback
+    to global constants / env overrides.
+    """
+    default = HEADER_SLOTS_BY_COUNT.get(
+        count, {"pos": RECAP_HEADER_POS, "width": RECAP_HEADER_WIDTH}
+    )
+    default_pos = default.get("pos", RECAP_HEADER_POS)
+    default_w = default.get("width", RECAP_HEADER_WIDTH)
+    default_h = default.get("height", None)
+
+    pos_x = (
+        int(os.environ["RECAP_HEADER_POS_X"])
+        if "RECAP_HEADER_POS_X" in os.environ
+        else default_pos[0]
+    )
+    pos_y = (
+        int(os.environ["RECAP_HEADER_POS_Y"])
+        if "RECAP_HEADER_POS_Y" in os.environ
+        else default_pos[1]
+    )
+    width = (
+        int(os.environ["RECAP_HEADER_WIDTH"])
+        if "RECAP_HEADER_WIDTH" in os.environ
+        else default_w
+    )
+    height = (
+        int(os.environ["RECAP_HEADER_HEIGHT"])
+        if "RECAP_HEADER_HEIGHT" in os.environ
+        else default_h
+    )
+    return (pos_x, pos_y), width, height
+
+
+def resolve_mascot_config(
+    count: int,
+) -> tuple[tuple[int, int], int, int | None]:
+    """Resolve (pos, width, height) for mascot for a given group count.
+
+    Defaults come from MASCOT_SLOTS_BY_COUNT[count], with fallback
+    to global constants / env overrides.
+    """
+    default = MASCOT_SLOTS_BY_COUNT.get(
+        count, {"pos": RECAP_MASCOT_POS, "width": RECAP_MASCOT_WIDTH}
+    )
+    default_pos = default.get("pos", RECAP_MASCOT_POS)
+    default_w = default.get("width", RECAP_MASCOT_WIDTH)
+    default_h = default.get("height", None)
+
+    pos_x = (
+        int(os.environ["RECAP_MASCOT_POS_X"])
+        if "RECAP_MASCOT_POS_X" in os.environ
+        else default_pos[0]
+    )
+    pos_y = (
+        int(os.environ["RECAP_MASCOT_POS_Y"])
+        if "RECAP_MASCOT_POS_Y" in os.environ
+        else default_pos[1]
+    )
+    width = (
+        int(os.environ["RECAP_MASCOT_WIDTH"])
+        if "RECAP_MASCOT_WIDTH" in os.environ
+        else default_w
+    )
+    height = (
+        int(os.environ["RECAP_MASCOT_HEIGHT"])
+        if "RECAP_MASCOT_HEIGHT" in os.environ
+        else default_h
+    )
+    return (pos_x, pos_y), width, height
+
 
 LEGACY_CATEGORY_LABELS = {
     'appliances': 'Điện gia dụng\n& Thiết bị nhà bếp',
@@ -323,12 +401,18 @@ GROUP_SLOT_TILTS_8 = {
     "household": 0.0,
     "phones_tablets": -6.0,
 }
-SLOT_BADGES_3 = (
-    ((597, 485, 772, 540), 14.0),
-    ((302, 595, 477, 650), 0.0),
-    ((597, 705, 772, 760), 14.0),
+SLOT_BADGES_2 = (
+    ((180, 654, 480, 710), 0.0),
+    ((544, 654, 844, 710), 0.0),
 )
-SLOT_TILTS_3 = (14.0, 0.0, 14.0)
+SLOT_TILTS_2 = (8.0, -8.0)
+
+SLOT_BADGES_3 = (
+    ((582, 485, 757, 540), 0.0),
+    ((282, 595, 457, 650), 0.0),
+    ((582, 705, 757, 760), 0.0),
+)
+SLOT_TILTS_3 = (0.0, 0.0, 0.0)
 
 SLOT_BADGES_4 = (
     ((390, 480, 565, 535), 0.0),
@@ -337,6 +421,36 @@ SLOT_BADGES_4 = (
     ((380, 710, 555, 760), 0.0),
 )
 SLOT_TILTS_4 = (0.0, 0.0, 0.0, 0.0)
+
+SLOT_BADGES_5 = (
+    ((115, 389, 335, 445), 0.0),
+    ((390, 379, 610, 435), 0.0),
+    ((665, 389, 885, 445), 0.0),
+    ((215, 619, 435, 675), 0.0),
+    ((530, 619, 750, 675), 0.0),
+)
+SLOT_TILTS_5 = (0.0, 0.0, 0.0, 0.0, 0.0)
+
+SLOT_BADGES_6 = (
+    ((105, 389, 325, 445), 0.0),
+    ((390, 379, 610, 435), 0.0),
+    ((665, 389, 885, 445), 0.0),
+    ((115, 619, 335, 675), 0.0),
+    ((400, 619, 620, 675), 0.0),
+    ((680, 619, 900, 675), 0.0),
+)
+SLOT_TILTS_6 = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+
+SLOT_BADGES_7 = (
+    ((410, 375, 635, 425), 0.0),
+    ((70, 380, 290, 435), 0.0),
+    ((695, 415, 915, 465), 0.0),
+    ((405, 525, 625, 575), 0.0),
+    ((70, 575, 290, 625), 0.0),
+    ((725, 625, 945, 675), 0.0),
+    ((380, 675, 600, 725), 0.0),
+)
+SLOT_TILTS_7 = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
 
 
 def category_layout(
@@ -351,6 +465,23 @@ def category_layout(
         )
     result = []
     slots = list(IMAGE_SLOTS_BY_COUNT[count])
+    if count == 1:
+        slot = slots[0]
+        (key, name), = names.items()
+        badge = (slot[0] + 100, slot[3] - 16, slot[2] - 100, slot[3] + 40)
+        return [{
+            "key": key, "slot": slot, "badge": badge, "label": name,
+            "angle": 0.0, "tilt": 0.0,
+        }]
+    if count == 2:
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_2, SLOT_TILTS_2,
+        ):
+            result.append({
+                "key": key, "slot": slot, "badge": badge, "label": name,
+                "angle": angle, "tilt": tilt,
+            })
+        return result
     if count == 3:
         for (key, name), slot, (badge, angle), tilt in zip(
             names.items(), slots, SLOT_BADGES_3, SLOT_TILTS_3,
@@ -369,28 +500,57 @@ def category_layout(
                 "angle": angle, "tilt": tilt,
             })
         return result
-    if count in (7, 8) and category_icons:
-        mapping = GROUP_SLOT_INDEX_8 if count == 8 else GROUP_SLOT_INDEX_7
-        badge_map = GROUP_BADGES_8 if count == 8 else GROUP_BADGES_7
-        slot_map = GROUP_SLOTS_8 if count == 8 else GROUP_SLOTS_7
-        angle_map = (
-            GROUP_BADGE_ANGLES_8 if count == 8 else GROUP_BADGE_ANGLES_7
-        )
-        tilt_map = GROUP_SLOT_TILTS_8 if count == 8 else GROUP_SLOT_TILTS_7
+    if count == 5:
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_5, SLOT_TILTS_5,
+        ):
+            result.append({
+                "key": key, "slot": slot, "badge": badge, "label": name,
+                "angle": angle, "tilt": tilt,
+            })
+        return result
+    if count == 6:
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_6, SLOT_TILTS_6,
+        ):
+            result.append({
+                "key": key, "slot": slot, "badge": badge, "label": name,
+                "angle": angle, "tilt": tilt,
+            })
+        return result
+    if count == 7:
+        for (key, name), slot, (badge, angle), tilt in zip(
+            names.items(), slots, SLOT_BADGES_7, SLOT_TILTS_7,
+        ):
+            result.append({
+                "key": key, "slot": slot, "badge": badge, "label": name,
+                "angle": angle, "tilt": tilt,
+            })
+        return result
+    if count == 8 and category_icons:
+        mapping = GROUP_SLOT_INDEX_8
+        badge_map = GROUP_BADGES_8
+        slot_map = GROUP_SLOTS_8
+        angle_map = GROUP_BADGE_ANGLES_8
+        tilt_map = GROUP_SLOT_TILTS_8
         assigned: dict[str, tuple[int, tuple[int, int, int, int]]] = {}
         used = set()
         for key in names:
             group_id = category_icons.get(key, key)
             idx = mapping.get(group_id)
             if idx is not None and idx not in used:
-                slot = slot_map.get(group_id, slots[idx])
+                slot = slot_map.get(group_id)
+                if slot is None:
+                    slot = slots[idx] if idx < len(slots) else slots[0]
                 assigned[key] = (idx, slot)
                 used.add(idx)
-        remaining = [i for i in range(count) if i not in used]
+        remaining = [i for i in range(len(slots)) if i not in used]
         for key in names:
             if key not in assigned:
-                idx = remaining.pop(0)
-                assigned[key] = (idx, slots[idx])
+                idx = remaining.pop(0) if remaining else 0
+                assigned[key] = (
+                    idx, slots[idx] if idx < len(slots) else slots[0]
+                )
                 used.add(idx)
         for key, name in names.items():
             idx, slot = assigned[key]
@@ -558,6 +718,10 @@ def compose_recap(
                 "Không có sản phẩm", anchor="mm", font=font, fill="white",
             )
     base_dir = background_path.parent if background_path else BACKGROUND_DIR
+    group_count = len(layout)
+    header_pos, header_w, header_h = resolve_header_config(group_count)
+    mascot_pos, mascot_w, mascot_h = resolve_mascot_config(group_count)
+
     if RECAP_HEADER_ENABLED:
         target_header_path = (
             base_dir / "recap_header.png"
@@ -567,15 +731,21 @@ def compose_recap(
         if target_header_path.is_file():
             with Image.open(target_header_path) as header_img:
                 h_rgba = header_img.convert("RGBA")
-                target_w = max(1, round(RECAP_HEADER_WIDTH * scale_x))
-                target_h = max(
-                    1, round(target_w * header_img.height / header_img.width)
-                )
+                target_w = max(1, round(header_w * scale_x))
+                if header_h is not None:
+                    target_h = max(1, round(header_h * scale_y))
+                else:
+                    target_h = max(
+                        1,
+                        round(
+                            target_w * header_img.height / header_img.width
+                        ),
+                    )
                 h_resized = h_rgba.resize(
                     (target_w, target_h), Image.Resampling.LANCZOS,
                 )
-                pos_x = round(RECAP_HEADER_POS[0] * scale_x)
-                pos_y = round(RECAP_HEADER_POS[1] * scale_y)
+                pos_x = round(header_pos[0] * scale_x)
+                pos_y = round(header_pos[1] * scale_y)
                 image.paste(h_resized, (pos_x, pos_y), h_resized)
     if RECAP_MASCOT_ENABLED:
         target_mascot_path = (
@@ -586,15 +756,21 @@ def compose_recap(
         if target_mascot_path.is_file():
             with Image.open(target_mascot_path) as mascot_img:
                 m_rgba = mascot_img.convert("RGBA")
-                target_w = max(1, round(RECAP_MASCOT_WIDTH * scale_x))
-                target_h = max(
-                    1, round(target_w * mascot_img.height / mascot_img.width)
-                )
+                target_w = max(1, round(mascot_w * scale_x))
+                if mascot_h is not None:
+                    target_h = max(1, round(mascot_h * scale_y))
+                else:
+                    target_h = max(
+                        1,
+                        round(
+                            target_w * mascot_img.height / mascot_img.width
+                        ),
+                    )
                 m_resized = m_rgba.resize(
                     (target_w, target_h), Image.Resampling.LANCZOS,
                 )
-                pos_x = round(RECAP_MASCOT_POS[0] * scale_x)
-                pos_y = round(RECAP_MASCOT_POS[1] * scale_y)
+                pos_x = round(mascot_pos[0] * scale_x)
+                pos_y = round(mascot_pos[1] * scale_y)
                 # Mascot đè lên sản phẩm (composited on top of products)
                 image.paste(m_resized, (pos_x, pos_y), m_resized)
     output_path.parent.mkdir(parents=True, exist_ok=True)
