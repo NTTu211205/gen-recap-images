@@ -44,10 +44,7 @@ class CategoryTaxonomyTests(unittest.TestCase):
             "tablet": {"tên sản phẩm": "Tablet A", "category_id": "30",
                        "category_name": "Máy tính bảng", "quantity_sold": 10},
         }
-        plan = build_catalog_plan(
-            list(catalog), catalog,
-            translate_product=lambda text: json.loads(text)["name"],
-        )
+        plan = build_catalog_plan(list(catalog), catalog)
         self.assertEqual(len(plan["categories"]), 1)
         self.assertEqual(len(plan["requests"]), 2)
         group = plan["categories"][0]
@@ -64,7 +61,7 @@ class CategoryTaxonomyTests(unittest.TestCase):
         plan = build_catalog_plan(["service"], {"service": {
             "tên sản phẩm": "Maintenance package", "category_id": "47",
             "category_name": "Dịch vụ vệ sinh, bảo dưỡng",
-        }}, translate_product=lambda text: json.loads(text)["name"])
+        }})
         self.assertEqual(plan["requests"], {})
         self.assertEqual(plan["excluded"][0]["reason"], "services")
 
@@ -72,7 +69,7 @@ class CategoryTaxonomyTests(unittest.TestCase):
         plan = build_catalog_plan(["new"], {"new": {
             "tên sản phẩm": "New product", "category_id": "unmapped",
             "category_name": "New category",
-        }}, translate_product=lambda text: json.loads(text)["name"])
+        }})
         self.assertEqual(plan["categories"][0]["id"], "other")
         self.assertEqual(plan["categories"][0]["name"], "Sản phẩm khác")
 

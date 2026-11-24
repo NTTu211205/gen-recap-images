@@ -1,6 +1,5 @@
 # Verify catalog preflight, capacity recovery and complete multi-page output.
 
-import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -48,18 +47,47 @@ class RecapServiceTests(unittest.TestCase):
                 ):
                     RecapService.from_settings(settings)
 
+    def test_settings_reads_image_api_url_from_env(self):
+        with patch.dict(
+            "os.environ",
+            {
+                "API_URL": "https://custom.endpoint/v1/edits",
+                "MWG_API_KEY": "test",
+                "IMAGE_SIZE": "256x256",
+                "IMAGE_STEPS": "12",
+                "IMAGE_CFG": "2.5",
+                "IMAGE_WORKERS": "3",
+            },
+            clear=True,
+        ):
+            settings = Settings(_env_file=None)
+            self.assertEqual(
+                settings.API_URL, "https://custom.endpoint/v1/edits",
+            )
+            self.assertEqual(settings.IMAGE_SIZE, "256x256")
+            self.assertEqual(settings.IMAGE_STEPS, 12)
+            self.assertEqual(settings.IMAGE_CFG, 2.5)
+            self.assertEqual(settings.IMAGE_WORKERS, 3)
+
+            config = RecapConfig.from_environment()
+            self.assertEqual(
+                config.api_url, "https://custom.endpoint/v1/edits",
+            )
+            self.assertEqual(config.image_size, "256x256")
+            self.assertEqual(config.steps, 12)
+            self.assertEqual(config.cfg, 2.5)
+            self.assertEqual(config.image_workers, 3)
+
     def test_unknown_code_fails_before_any_mwg_calls(self):
         service = service_for_groups(1, Path("unused"))
-        with patch("src.services.recap_service.post_json_with_curl") as post:
-            with patch(
-                "src.services.recap_service.generate_recap",
-            ) as generate:
-                with self.assertRaises(ProductSelectionError) as caught:
-                    service.generate(["000", "999"])
+        with patch(
+            "src.services.recap_service.generate_recap",
+        ) as generate:
+            with self.assertRaises(ProductSelectionError) as caught:
+                service.generate(["000", "999"])
         self.assertEqual(caught.exception.excluded, [{
             "productcode": "999", "reason": "catalog_not_found",
         }])
-        post.assert_not_called()
         generate.assert_not_called()
 
     def test_timeout_releases_capacity_for_the_next_request(self):
@@ -74,22 +102,15 @@ class RecapServiceTests(unittest.TestCase):
     def test_duplicate_codes_generate_one_product_and_return_one_page(self):
         service = service_for_groups(1, Path("unused"))
         with patch(
-            "src.services.recap_service.QwenProductTranslator",
-        ) as translator:
-            translator.return_value.translate.side_effect = (
-                lambda text: json.loads(text)["name"]
+            "src.services.recap_service.generate_recap",
+            return_value=Path("1.png"),
+        ) as generate:
+            self.assertEqual(
+                service.generate(["000", "000"]), Path("1.png"),
             )
-            with patch(
-                "src.services.recap_service.generate_recap",
-                return_value=Path("1.png"),
-            ) as generate:
-                self.assertEqual(
-                    service.generate(["000", "000"]), Path("1.png"),
-                )
         plan = generate.call_args.args[1]
         self.assertEqual(len(plan["requests"]), 1)
         self.assertEqual(len(plan["categories"]), 1)
-        translator.return_value.translate.assert_called_once()
 
     def test_ninth_group_is_included_in_one_combined_png(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -101,16 +122,10 @@ class RecapServiceTests(unittest.TestCase):
             originals = [path.read_bytes() for path in (first, second)]
             service = service_for_groups(9, root)
             with patch(
-                "src.services.recap_service.QwenProductTranslator",
-            ) as qwen:
-                qwen.return_value.translate.side_effect = (
-                    lambda text: json.loads(text)["name"]
-                )
-                with patch(
-                    "src.services.recap_service.generate_recap",
-                    return_value=first,
-                ):
-                    result = service.generate([f"{i:03d}" for i in range(9)])
+                "src.services.recap_service.generate_recap",
+                return_value=first,
+            ):
+                result = service.generate([f"{i:03d}" for i in range(9)])
             with Image.open(result) as image:
                 self.assertEqual(image.format, "PNG")
                 self.assertEqual(image.size, (30, 35))

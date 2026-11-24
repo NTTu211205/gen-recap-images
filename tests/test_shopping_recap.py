@@ -30,12 +30,12 @@ class ShoppingRecapTests(unittest.TestCase):
         arguments = session.post.call_args.kwargs
         self.assertEqual(arguments["headers"]["apikey"], "test-key")
         self.assertEqual(arguments["json"], {
-            "model": "MWG",
-            "translate": False,
             "prompt": "prompt",
+            "images": [],
+            "size": "512x512",
             "n": 1,
-            "size": "1024x1024",
-            "response_format": "b64_json",
+            "steps": 8,
+            "cfg": 1.0,
         })
         self.assertEqual(arguments["timeout"], (15, 300))
         response.raise_for_status.side_effect = requests.HTTPError()
@@ -73,7 +73,7 @@ class ShoppingRecapTests(unittest.TestCase):
     def test_transports_share_payload_and_validation(self):
         config = RecapConfig(
             api_key="test-key", model="custom-model",
-            image_size="512x512", translate=True,
+            image_size="512x512",
         )
         session = MagicMock()
         response = session.post.return_value.__enter__.return_value
@@ -95,26 +95,55 @@ class ShoppingRecapTests(unittest.TestCase):
                 session.post.call_args.kwargs["json"], post.call_args.args[1],
             )
             payload = post.call_args.args[1]
-            self.assertEqual(payload["model"], "custom-model")
+            self.assertEqual(payload["prompt"], "Điện thoại")
             self.assertEqual(payload["size"], "512x512")
-            self.assertTrue(payload["translate"])
+            self.assertEqual(payload["steps"], 8)
+            self.assertEqual(payload["cfg"], 1.0)
+            self.assertEqual(payload["images"], [])
 
-    def test_client_can_enable_server_translation(self):
+    def test_client_timings_logging(self):
         session = MagicMock()
         response = session.post.return_value.__enter__.return_value
         response.json.return_value = {
             "data": [],
-            "timings": {"translate_s": 1.2, "generate_s": 9.0},
+            "timings": {"generate_s": 9.0},
         }
         client = MWGImageClient(
-            RecapConfig(api_key="test-key", translate=True), session,
+            RecapConfig(api_key="test-key"), session,
         )
         with self.assertLogs(
             "src.clients.image_generation", level="INFO",
         ) as logs:
             client.generate_image("prompt")
-        self.assertTrue(session.post.call_args.kwargs["json"]["translate"])
         self.assertTrue(any("generate_s: 9.00s" in log for log in logs.output))
+
+    def test_qwen_edit_image_contract(self):
+        from src.prompts.products import build_edit_image_prompt
+        prompt = build_edit_image_prompt("SmartWatch")
+        self.assertIn("SmartWatch", prompt)
+        self.assertNotIn("{product_type}", prompt)
+        session = MagicMock()
+        response = session.post.return_value.__enter__.return_value
+        response.json.return_value = {"data": []}
+        config = RecapConfig(api_key="test-key")
+        client = MWGImageClient(config, session)
+        image_url = (
+            "https://cdn.tgdd.vn/2026/10/timerseo/366152-600x600-8.jpg"
+        )
+        client.generate_image(prompt, images=[image_url])
+        arguments = session.post.call_args.kwargs
+        self.assertEqual(
+            config.api_url,
+            "https://ai.itmwg.vn/ai-mwg/qwen-edit-image/v1/images/edits",
+        )
+        self.assertEqual(arguments["json"], {
+            "prompt": prompt,
+            "images": [image_url],
+            "size": "512x512",
+            "n": 1,
+            "steps": 8,
+            "cfg": 1.0,
+        })
 
     def test_client_validates_prompt_length_before_http_request(self):
         session = MagicMock()

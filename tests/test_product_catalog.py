@@ -27,10 +27,7 @@ class ProductCatalogTests(unittest.TestCase):
             "001": {"tên sản phẩm": "Loa Marshall", "category_id": "132"},
             "002": {"tên sản phẩm": "Tai nghe Sony", "category_id": "133"},
         }
-        plan = build_catalog_plan(
-            list(catalog), catalog,
-            translate_product=lambda text: json.loads(text)["name"],
-        )
+        plan = build_catalog_plan(list(catalog), catalog)
         settings = {
             option["productcode"]: option["preserve_interior"]
             for category in plan["categories"]
@@ -38,7 +35,7 @@ class ProductCatalogTests(unittest.TestCase):
         }
         self.assertEqual(settings, {"001": True, "002": False})
 
-    def test_parallel_translation_preserves_plan_and_deduplicates_codes(self):
+    def test_plan_preserves_and_deduplicates_codes(self):
         catalog = {
             "001": {
                 "tên sản phẩm": "Phone A", "category_id": "27",
@@ -49,28 +46,9 @@ class ProductCatalogTests(unittest.TestCase):
                 "quantity_sold": 10,
             },
         }
-        second_done = Event()
-        calls = []
-
-        def translate(text):
-            name = json.loads(text)["name"]
-            calls.append(name)
-            if name == "Phone A":
-                self.assertTrue(second_done.wait(2))
-            else:
-                second_done.set()
-            return name
-
-        parallel = build_catalog_plan(
-            ["001", "002", "001"], catalog,
-            translate_product=translate, translation_workers=2,
-        )
-        sequential = build_catalog_plan(
-            ["001", "002", "001"], catalog,
-            translate_product=lambda text: json.loads(text)["name"],
-        )
-        self.assertEqual(parallel, sequential)
-        self.assertCountEqual(calls, ["Phone A", "Phone B"])
+        plan = build_catalog_plan(["001", "002", "001"], catalog)
+        self.assertEqual(len(plan["requests"]), 2)
+        self.assertEqual(len(plan["categories"][0]["selected_products"]), 2)
 
     def test_parallel_images_keep_group_identity_when_completed_out_of_order(
         self,
@@ -137,17 +115,18 @@ class ProductCatalogTests(unittest.TestCase):
         } for code in "abcd"}
         plan = build_catalog_plan(
             ["a", "a", "b", "c", "d"], catalog,
-            translate_product=lambda text: json.loads(text)["name"],
         )
         category = plan["categories"][0]
         self.assertEqual([
             product["productcode"] for product in category["selected_products"]
         ], ["a", "b", "c", "d"])
         self.assertEqual(category["omitted_count"], 0)
+        descriptions = "\n".join(plan["groups"][category["key"]])
+        self.assertIn("Phone D", descriptions)
         prompt = "\n".join(
             plan["requests"][key]["prompt"] for key in category["request_keys"]
         )
-        self.assertIn("Phone D", prompt)
+        self.assertIn("Điện thoại", prompt)
         self.assertEqual(len(plan["requests"]), 4)
 
     def test_layout_keeps_image_key_and_category_name_together(self):
@@ -214,7 +193,6 @@ class ProductCatalogTests(unittest.TestCase):
         } for index in range(9)}
         plan = build_catalog_plan(
             list(catalog), catalog,
-            translate_product=lambda text: json.loads(text)["name"],
             category_groups=category_groups,
         )
         # Request order must not control label placement.
@@ -376,12 +354,7 @@ class ProductCatalogTests(unittest.TestCase):
             "tên sản phẩm": f"Product {i}", "category_id": "27",
             "category_name": "Điện thoại",
         } for i in range(10)}
-        plan = build_catalog_plan(
-            list(catalog), catalog,
-            translate_product=lambda text: (
-                json.loads(text)["name"] + " detail" * 110
-            ),
-        )
+        plan = build_catalog_plan(list(catalog), catalog)
         category = plan["categories"][0]
         self.assertGreater(len(category["request_keys"]), 1)
         image = Image.new("RGBA", (100, 100))

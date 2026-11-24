@@ -1,6 +1,5 @@
 # Adapt the existing recap pipeline for bounded, request-scoped API calls.
 
-from functools import partial
 import logging
 from pathlib import Path
 from threading import BoundedSemaphore
@@ -12,8 +11,6 @@ from src.catalog.product_catalog import (
 )
 from src.catalog.product_groups import load_category_groups
 from src.clients.image_generation import CurlImageClient
-from src.clients.mwg_http import post_json_with_curl
-from src.clients.product_translation import QWEN_API_URL, QwenProductTranslator
 from src.core.config import Settings
 from src.core.recap_config import RecapConfig
 from src.imaging.background_templates import (
@@ -53,14 +50,7 @@ class RecapService:
 
     @classmethod
     def from_settings(cls, settings: Settings) -> "RecapService":
-        config = RecapConfig(
-            api_key=settings.MWG_API_KEY.get_secret_value(),
-            cookie=(settings.MWG_COOKIE.get_secret_value()
-                    if settings.MWG_COOKIE else None),
-            timeout=(15, settings.MWG_REQUEST_TIMEOUT_SECONDS),
-            translation_workers=settings.MWG_TRANSLATION_WORKERS,
-            image_workers=settings.MWG_IMAGE_WORKERS,
-        )
+        config = RecapConfig.from_settings(settings)
         require_backgrounds(range(1, GROUPS_PER_PAGE + 1))
         find_font()
         background_session()
@@ -87,20 +77,15 @@ class RecapService:
         )
         if excluded:
             raise ProductSelectionError(excluded)
-        post_json = partial(
-            post_json_with_curl, QWEN_API_URL,
-            api_key=self.config.api_key, cookie=self.config.cookie,
-            timeout=self.config.timeout,
-        )
-        # Cache translations only within this request; do not share user data.
-        translator = QwenProductTranslator(post_json)
         plan = build_catalog_plan(
-            productcodes, self.catalog, translate_product=translator.translate,
+            productcodes, self.catalog,
             category_groups=self.category_groups,
-            translation_workers=self.config.translation_workers,
+            image_size=self.config.image_size,
+            steps=self.config.steps,
+            cfg=self.config.cfg,
         )
         logger.info(
-            "Recap planning/translation: %.2fs", perf_counter() - started,
+            "Recap planning: %.2fs", perf_counter() - started,
         )
         first_page = generate_recap(
             CurlImageClient(self.config), plan, self.output_dir,

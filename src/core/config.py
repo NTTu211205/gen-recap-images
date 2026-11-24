@@ -19,14 +19,21 @@ class Settings(BaseSettings):
     APP_DEBUG: bool = False
     MWG_API_KEY: SecretStr = SecretStr("")
     MWG_COOKIE: SecretStr | None = None
+    API_URL: str = "https://ai.itmwg.vn/ai-mwg/qwen-edit-image/v1/images/edits"
+    IMAGE_SIZE: str = "512x512"
+    IMAGE_STEPS: int = 8
+    IMAGE_CFG: float = 1.0
+    IMAGE_WORKERS: int = Field(default=2, ge=1, le=8)
     MWG_REQUEST_TIMEOUT_SECONDS: float = Field(
         default=120, gt=0, le=600, allow_inf_nan=False,
     )
     CATALOG_PATH: Path = paths.CATALOG_PATH
     CATEGORY_LABELS_PATH: Path = paths.CATEGORY_LABELS_PATH
     OUTPUT_DIR: Path = paths.OUTPUT_DIR
-    MWG_TRANSLATION_WORKERS: int = Field(default=4, ge=1, le=8)
-    MWG_IMAGE_WORKERS: int = Field(default=2, ge=1, le=8)
+
+    @property
+    def MWG_IMAGE_WORKERS(self) -> int:
+        return self.IMAGE_WORKERS
 
 
 settings = Settings()

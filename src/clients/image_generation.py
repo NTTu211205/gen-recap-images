@@ -12,7 +12,15 @@ from src.core.recap_config import RecapConfig
 logger = logging.getLogger(__name__)
 
 
-def build_image_payload(prompt: str, config: RecapConfig) -> dict[str, Any]:
+def build_image_payload(
+    prompt: str,
+    config: RecapConfig,
+    images: list[str] | None = None,
+    *,
+    size: str | None = None,
+    steps: int | None = None,
+    cfg: float | None = None,
+) -> dict[str, Any]:
     """Validate the gateway contract once for both HTTP transports."""
     if not 1 <= len(prompt) <= 4000:
         raise ValueError(
@@ -20,12 +28,12 @@ def build_image_payload(prompt: str, config: RecapConfig) -> dict[str, Any]:
             "Shorten the template or product list before retrying."
         )
     return {
-        "model": config.model,
-        "translate": config.translate,
         "prompt": prompt,
+        "images": images if images is not None else [],
+        "size": size or config.image_size,
         "n": 1,
-        "size": config.image_size,
-        "response_format": "b64_json",
+        "steps": steps if steps is not None else config.steps,
+        "cfg": cfg if cfg is not None else config.cfg,
     }
 
 
@@ -38,8 +46,19 @@ class MWGImageClient:
         self.config = config
         self.session = session
 
-    def generate_image(self, prompt: str) -> dict[str, Any]:
-        payload = build_image_payload(prompt, self.config)
+    def generate_image(
+        self,
+        prompt: str,
+        images: list[str] | None = None,
+        *,
+        size: str | None = None,
+        steps: int | None = None,
+        cfg: float | None = None,
+    ) -> dict[str, Any]:
+        payload = build_image_payload(
+            prompt, self.config, images=images, size=size, steps=steps,
+            cfg=cfg,
+        )
         headers = {
             "apikey": self.config.api_key,
             "Content-Type": "application/json",
@@ -48,8 +67,8 @@ class MWGImageClient:
             headers["Cookie"] = self.config.cookie
 
         logger.info(
-            "Calling MWG API: prompt=%s chars, size=%s, translate=%s",
-            len(prompt), self.config.image_size, self.config.translate,
+            "Calling MWG API: prompt=%s chars, size=%s, images=%s",
+            len(prompt), payload["size"], len(payload["images"]),
         )
         started = perf_counter()
         with self.session.post(
@@ -71,7 +90,7 @@ class MWGImageClient:
             raise ValueError("Invalid API response")
         timings = result.get("timings")
         if isinstance(timings, dict):
-            for key in ("translate_s", "generate_s"):
+            for key in ("generate_s",):
                 value = timings.get(key)
                 if isinstance(value, (int, float)):
                     logger.info("Server %s: %.2fs", key, value)
@@ -85,8 +104,19 @@ class CurlImageClient:
     def __init__(self, config: RecapConfig) -> None:
         self.config = config
 
-    def generate_image(self, prompt: str) -> dict[str, Any]:
-        payload = build_image_payload(prompt, self.config)
+    def generate_image(
+        self,
+        prompt: str,
+        images: list[str] | None = None,
+        *,
+        size: str | None = None,
+        steps: int | None = None,
+        cfg: float | None = None,
+    ) -> dict[str, Any]:
+        payload = build_image_payload(
+            prompt, self.config, images=images, size=size, steps=steps,
+            cfg=cfg,
+        )
         logger.info(
             "Calling MWG API via curl: prompt=%s chars, max wait=%ss",
             len(prompt), self.config.timeout[1],
@@ -99,7 +129,7 @@ class CurlImageClient:
         if isinstance(timings, dict):
             logger.info("Server timings: %s", {
                 key: value for key, value in timings.items()
-                if key in ("translate_s", "generate_s")
+                if key in ("generate_s",)
                 and isinstance(value, (int, float))
             })
         return result

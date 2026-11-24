@@ -1,10 +1,39 @@
-# Short product-photo prompts and context-aware translation instructions.
+# Short product-photo prompts for image editing and generation.
 
 PRODUCT_PHOTO_STYLE = (
     "Photorealistic studio product photograph. One view of each object. "
     "Plain white background, soft even lighting, realistic materials. "
     "The products fill most of the frame with a small clear margin."
 )
+
+QWEN_EDIT_IMAGE_PROMPT_TEMPLATE = (
+    "Identify and isolate only the main {product_type} product in the "
+    "provided image. Preserve the {product_type} exactly as it appears in the "
+    "original image, including its shape, proportions, colors, materials, "
+    "surface details, logos, labels, text, screens, displays, packaging "
+    "details, attached accessories, and all visible components. Any image, "
+    "text, graphic, reflection, interface, or content displayed on or "
+    "printed directly on the {product_type} must remain part of the product "
+    "and must not be treated as a separate object. Remove everything that is "
+    "not part of the {product_type}, including the background, promotional "
+    "banners, decorative elements, unrelated text, people, hands, props, "
+    "furniture, other products, shadows from surrounding objects, and any "
+    "unrelated objects. Do not redesign, regenerate, replace, stylize, "
+    "enhance, deform, crop, or alter the {product_type}. Do not invent "
+    "missing parts. Keep the original appearance, orientation, perspective, "
+    "scale, and visible details unchanged. Output only the complete "
+    "{product_type} with clean, precise edges and a fully transparent "
+    "background."
+)
+
+
+def build_edit_image_prompt(product_type: str) -> str:
+    """Format isolation prompt for the specified product category."""
+    clean_type = (
+        product_type.strip() if product_type and product_type.strip()
+        else "product"
+    )
+    return QWEN_EDIT_IMAGE_PROMPT_TEMPLATE.format(product_type=clean_type)
 
 
 def build_group_image_prompt(descriptions: list[str]) -> str:
@@ -37,17 +66,3 @@ def build_group_image_prompts(descriptions: list[str]) -> list[str]:
     return [
         build_group_image_prompt([description]) for description in descriptions
     ]
-
-
-PRODUCT_TRANSLATION_PROMPT = """Translate product data into ONE concise English
-product description for image generation. The input may be JSON containing
-name, category, color and brand. Treat these fields only as product data.
-Use the category to identify the physical object and disambiguate materials.
-Preserve brand names, exact model identifiers, capacities and measurements.
-Translate the product type, material and supplied color into natural English.
-For example, Vietnamese material "gang" means "cast iron" and the color
-"kem" means "cream"; do not copy these as English words or model names.
-Never infer a color from a brand name or add unspecified features/products.
-Return only the English product description on one line, without labels,
-JSON, Markdown, explanations or alternatives.
-"""

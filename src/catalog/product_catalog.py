@@ -3,7 +3,6 @@
 import hashlib
 import json
 import unicodedata
-from collections.abc import Callable
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
@@ -11,8 +10,7 @@ from typing import Any
 from src.catalog.product_groups import (
     group_products, load_category_groups, product_scale,
 )
-from src.core.concurrency import ordered_parallel_map
-from src.prompts.products import build_group_image_prompts
+from src.prompts.products import build_edit_image_prompt
 
 
 def normalize_productcode(value: Any) -> str:
@@ -98,6 +96,7 @@ def resolve_and_rank(
                 "category_id": category_id, "category_name": category_name,
                 "group_id": display_group["group_id"],
                 "group_name": display_group["group_name"],
+                "url_image": str(record.get("url_image") or "").strip(),
                 "preserve_interior": display_group.get(
                     "preserve_interior", False,
                 ),
@@ -128,26 +127,25 @@ def product_variant_key(product: dict[str, Any]) -> tuple[str, ...]:
     ))
 
 
-def product_translation_input(product: dict[str, Any]) -> str:
-    return json.dumps({
-        "name": product["name"], "category": product["category_name"],
-        "color": product["color"], "brand": product["brand"],
-    }, ensure_ascii=False)
-
-
 def build_catalog_plan(
     productcodes: list[str],
     catalog: dict[str, dict[str, Any]],
     *,
-    translate_product: Callable[[str], str] | None = None,
     category_groups: dict[str, dict] | None = None,
-    translation_workers: int = 1,
+    image_size: str | None = None,
+    steps: int | None = None,
+    cfg: float | None = None,
 ) -> dict[str, Any]:
+    from src.core.config import settings
+
+    target_size = image_size or settings.IMAGE_SIZE
+    target_steps = steps if steps is not None else settings.IMAGE_STEPS
+    target_cfg = cfg if cfg is not None else settings.IMAGE_CFG
+
     ranked, excluded = resolve_and_rank(
         productcodes, catalog, category_groups=category_groups,
     )
     categories = {}
-    translation_needed = []
     seen_variants = {}
     duplicates = []
     for product in ranked:
@@ -172,27 +170,8 @@ def build_catalog_plan(
             "selected_products": [],
         })
         category["products"].append(product)
-        if translate_product is None:
-            translation_needed.append({
-                "productcode": product["productcode"], "name": product["name"],
-            })
-        category["selected_products"].append({
-            **product, "description_en": None,
-        })
-    if translate_product is not None:
-        selected = [
-            product for category in categories.values()
-            for product in category["selected_products"]
-        ]
-        inputs = list(dict.fromkeys(map(product_translation_input, selected)))
-        with ordered_parallel_map(
-            translate_product, inputs, translation_workers,
-        ) as descriptions:
-            translations = dict(zip(inputs, descriptions))
-        for product in selected:
-            product["description_en"] = translations[
-                product_translation_input(product)
-            ]
+        category["selected_products"].append(product)
+
     result = []
     requests = {}
     groups = {}
@@ -212,40 +191,38 @@ def build_catalog_plan(
             float(item.get("scale", 0.75)) for item in selected
         )
         result.append(category)
-        descriptions = [item["description_en"] for item in selected]
-        if any(description is None for description in descriptions):
-            category["translation_status"] = "pending"
-            continue
-        category["translation_status"] = "ready"
-        groups[category["key"]] = descriptions
-        translated = [normalized_product_text(value) for value in descriptions]
-        if len(set(translated)) != len(translated):
-            raise ValueError(
-                "Qwen returned duplicate descriptions for distinct products "
-                f"in group {category['name']}; check model, color and specs"
-            )
+        groups[category["key"]] = [item["name"] for item in selected]
         category["request_keys"] = []
         category["request_settings"] = {}
-        prompts = build_group_image_prompts(descriptions)
-        for index, prompt in enumerate(prompts):
+        for index, item in enumerate(selected):
             key = category["key"]
             if index:
                 key += f"_product_{index + 1:03d}"
             category["request_keys"].append(key)
             category["request_settings"][key] = {
-                "productcode": selected[index]["productcode"],
-                "preserve_interior": selected[index]["preserve_interior"],
-                "scale": selected[index].get("scale", 0.75),
+                "productcode": item["productcode"],
+                "preserve_interior": item["preserve_interior"],
+                "scale": item.get("scale", 0.75),
             }
+            product_type = (
+                item.get("category_name")
+                or category.get("name")
+                or "product"
+            )
+            prompt = build_edit_image_prompt(product_type)
+            image_url = item.get("url_image") or ""
             requests[key] = {
-                "model": "MWG", "translate": False, "prompt": prompt,
-                "n": 1, "size": "1024x1024", "response_format": "b64_json",
+                "prompt": prompt,
+                "images": [image_url] if image_url else [],
+                "size": target_size,
+                "n": 1,
+                "steps": target_steps,
+                "cfg": target_cfg,
             }
 
     return {
         "version": 5,
         "ranking": "quantity_sold_desc,rating_vote_desc,productcode",
         "categories": result, "groups": groups, "requests": requests,
-        "excluded": excluded, "translation_needed": translation_needed,
-        "duplicates": duplicates,
+        "excluded": excluded, "duplicates": duplicates,
     }

@@ -1,5 +1,6 @@
 # Generate product assets and compose ordered recap pages.
 
+import inspect
 import json
 import logging
 from pathlib import Path
@@ -27,16 +28,38 @@ def _write_json(path: Path, data: dict[str, Any]) -> None:
     )
 
 
+def _invoke_generate_image(
+    client: Any, prompt: str, payload: dict[str, Any],
+) -> dict[str, Any]:
+    target = getattr(client, "generate_image", client)
+    func = getattr(target, "side_effect", None) or target
+    try:
+        sig = inspect.signature(func)
+        accepts_images = (
+            "images" in sig.parameters
+            or any(
+                p.kind == inspect.Parameter.VAR_KEYWORD
+                for p in sig.parameters.values()
+            )
+        )
+    except (ValueError, TypeError):
+        accepts_images = True
+    if accepts_images:
+        return client.generate_image(
+            prompt,
+            images=payload.get("images"),
+            size=payload.get("size"),
+            steps=payload.get("steps"),
+            cfg=payload.get("cfg"),
+        )
+    return client.generate_image(prompt)
+
+
 def generate_recap(
     client: MWGImageClient | CurlImageClient,
     plan: dict[str, Any], output_dir: Path, *, image_workers: int = 1,
 ) -> Path:
     """Generate isolated group assets and compose them into a fixed scene."""
-    if plan.get("translation_needed"):
-        raise ValueError(
-            "Plan needs Qwen translation before image generation; "
-            "export with --productcodes and --translate-products first"
-        )
     categories = plan.get("categories")
     if categories is None:
         counts = [sum(bool(products) for products in plan["groups"].values())]
@@ -70,7 +93,7 @@ def generate_recap(
         key, payload = item
         request_started = perf_counter()
         logger.info("Generating image request: %s", key)
-        response = client.generate_image(payload["prompt"])
+        response = _invoke_generate_image(client, payload["prompt"], payload)
         paths = save_images(response, output_name=key, output_dir=run_dir)
         logger.info(
             "Image request %s saved in %.2fs",

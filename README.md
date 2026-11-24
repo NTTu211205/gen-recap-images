@@ -46,13 +46,12 @@ Mã dạng chuỗi giữ được số `0` ở đầu. Mã trùng hoặc cùng b
 được loại trùng theo pipeline hiện có. Nếu bất kỳ mã nào không tồn tại, thiếu
 tên hoặc thuộc nhóm không hỗ trợ, API trả `422` trước khi gọi Qwen/Gen ảnh.
 
-API và CLI mặc định dịch tối đa 4 sản phẩm, gọi Gen ảnh tối đa 2 request
-đồng thời. Điều chỉnh trong `.env`: `MWG_TRANSLATION_WORKERS=4` và
-`MWG_IMAGE_WORKERS=2` (1–8; đặt 1 để chạy tuần tự). CLI dùng transport
+API và CLI mặc định gọi Gen ảnh tối đa 2 request đồng thời.
+Điều chỉnh trong `.env`: `IMAGE_WORKERS=2` (1–8; đặt 1 để chạy tuần tự). CLI dùng transport
 `requests` vẫn Gen ảnh tuần tự vì dùng chung HTTP session; `curl` hỗ trợ
 chạy đồng thời. Thứ tự nhóm/nhãn được giữ nguyên, xóa nền chạy tuần tự.
 Khi lỗi, không tự retry; những request đã chạy được chờ kết thúc trong timeout,
-ảnh gốc đã trả về vẫn được lưu. Log ghi thời gian dịch, từng request ảnh,
+ảnh gốc đã trả về vẫn được lưu. Log ghi từng request ảnh,
 xóa nền cùng generation và ghép ảnh để đo tốc độ thực tế của gateway.
 
 Mỗi trang chứa tối đa 8 nhóm. Nếu có nhiều trang, API xếp toàn bộ trang theo
@@ -139,8 +138,7 @@ fi
 | `MWG_API_KEY` | Bắt buộc, API key của gateway MWG |
 | `MWG_COOKIE` | Tùy chọn, điền nếu gateway yêu cầu |
 | `MWG_REQUEST_TIMEOUT_SECONDS` | Timeout mỗi request MWG; mặc định `120` |
-| `MWG_TRANSLATION_WORKERS` | Số lượt dịch đồng thời; mặc định `4`, từ 1–8 |
-| `MWG_IMAGE_WORKERS` | Số request Gen ảnh đồng thời; mặc định `2`, từ 1–8 |
+| `IMAGE_WORKERS` | Số request Gen ảnh đồng thời; mặc định `2`, từ 1–8 |
 
 Với `docker run --env-file`, viết dạng `KEY=value`, không dùng `export`
 và không bọc giá trị trong dấu nháy: Docker có thể giữ dấu nháy trong giá trị.

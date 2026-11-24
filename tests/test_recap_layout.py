@@ -247,3 +247,11 @@ class RecapLayoutTests(unittest.TestCase):
         self.assertEqual(len(layout_7), 7)
         for item in layout_7:
             self.assertEqual(item["tilt"], 0.0)
+
+    def test_complete_eight_group_recap_uses_one_page(self):
+        from src.imaging.recap_layout import GROUPS_PER_PAGE
+
+        self.assertEqual(GROUPS_PER_PAGE, 8)
+        layout = category_layout({str(i): f"Group {i}" for i in range(8)})
+        self.assertEqual(len(layout), 8)
+        self.assertEqual(len({item["slot"] for item in layout}), 8)

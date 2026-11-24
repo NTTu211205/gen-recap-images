@@ -1,6 +1,5 @@
 # Verify short product-specific prompts and complete group coverage.
 
-import json
 import unittest
 
 from src.catalog.product_catalog import build_catalog_plan
@@ -48,10 +47,7 @@ class GroupPromptTests(unittest.TestCase):
             "tên sản phẩm": f"Phone {i}", "category_id": "27",
             "category_name": "Điện thoại", "quantity_sold": i,
         } for i in range(8)}
-        plan = build_catalog_plan(
-            list(catalog), catalog,
-            translate_product=lambda text: json.loads(text)["name"],
-        )
+        plan = build_catalog_plan(list(catalog), catalog)
         category = plan["categories"][0]
         self.assertEqual(len(category["selected_products"]), 8)
         self.assertEqual(category["omitted_count"], 0)
