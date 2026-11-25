@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 import unicodedata
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -127,6 +128,24 @@ def product_variant_key(product: dict[str, Any]) -> tuple[str, ...]:
     ))
 
 
+def chunk_group_products(
+    products: list[dict[str, Any]], max_batch: int = 3,
+) -> list[list[dict[str, Any]]]:
+    """Divide products into batches of at most max_batch (e.g. 5 -> [3, 2])."""
+    n = len(products)
+    if n <= max_batch:
+        return [products]
+    num_batches = math.ceil(n / max_batch)
+    per_batch, extra = divmod(n, num_batches)
+    chunks = []
+    offset = 0
+    for i in range(num_batches):
+        count = per_batch + (1 if i < extra else 0)
+        chunks.append(products[offset:offset + count])
+        offset += count
+    return chunks
+
+
 def build_catalog_plan(
     productcodes: list[str],
     catalog: dict[str, dict[str, Any]],
@@ -192,35 +211,41 @@ def build_catalog_plan(
         )
         result.append(category)
         groups[category["key"]] = [item["name"] for item in selected]
-        group_products = selected[:3]
-        image_urls = [
-            item["url_image"] for item in group_products
-            if item.get("url_image")
-        ][:3]
-        key = category["key"]
-        category["request_keys"] = [key]
-        category["request_settings"] = {
-            key: {
-                "productcode": group_products[0]["productcode"],
+        chunks = chunk_group_products(selected, max_batch=3)
+        category["request_keys"] = []
+        category["request_settings"] = {}
+
+        for batch_idx, chunk in enumerate(chunks, 1):
+            req_key = (
+                f"{category['key']}_{batch_idx:02d}"
+                if len(chunks) > 1
+                else category["key"]
+            )
+            category["request_keys"].append(req_key)
+            category["request_settings"][req_key] = {
+                "productcode": chunk[0]["productcode"],
                 "productcodes": [
-                    item["productcode"] for item in group_products
+                    item["productcode"] for item in chunk
                 ],
                 "preserve_interior": any(
                     bool(item.get("preserve_interior"))
-                    for item in group_products
+                    for item in chunk
                 ),
                 "scale": category["scale"],
             }
-        }
-        prompt = build_group_edit_prompt(group_products)
-        requests[key] = {
-            "prompt": prompt,
-            "images": image_urls,
-            "size": target_size,
-            "n": 1,
-            "steps": target_steps,
-            "cfg": target_cfg,
-        }
+            image_urls = [
+                item["url_image"] for item in chunk
+                if item.get("url_image")
+            ]
+            prompt = build_group_edit_prompt(chunk)
+            requests[req_key] = {
+                "prompt": prompt,
+                "images": image_urls,
+                "size": target_size,
+                "n": 1,
+                "steps": target_steps,
+                "cfg": target_cfg,
+            }
 
     return {
         "version": 5,

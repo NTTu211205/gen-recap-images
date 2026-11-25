@@ -1,0 +1,1737 @@
+[
+  {
+    "case_title": "40 sản phẩm thuộc 8 nhóm (Bộ 1 - Phân bổ đều 5 SP/nhóm)",
+    "file_name": "list_40_prods_8_groups_set1.json",
+    "total_products": 40,
+    "total_groups": 8,
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "2440931000597",
+            "product_name": "Máy tính bảng iPad 10 5G 256GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20090000.0,
+            "quantity_sold": 951,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/522/295452/ipad-10-wifi-cellular-pink-thumb.jpeg"
+          },
+          {
+            "productcode": "0131491005271",
+            "product_name": "Điện thoại Tecno Spark 50 4GB/128GB",
+            "brand": "Tecno",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 4590000.0,
+            "quantity_sold": 935,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367204/tecno-spark-50-4gb-128gb-den-thumb.png"
+          },
+          {
+            "productcode": "0131491005109",
+            "product_name": "Điện thoại Motorola Signature 12GB/256GB",
+            "brand": "Motorola",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20990000.0,
+            "quantity_sold": 879,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/motorola-signature-ghi-den-thumbnew102351.jpg"
+          },
+          {
+            "productcode": "0131491005284",
+            "product_name": "Điện thoại Honor 600 8GB/256GB",
+            "brand": "Honor",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 16790000.0,
+            "quantity_sold": 538,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367010/honor-600-trang-thumb.jpg"
+          },
+          {
+            "productcode": "0130018000581",
+            "product_name": "Xphone Hera S9",
+            "brand": "Xphone",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 530000.0,
+            "quantity_sold": 532,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/370547/xphone-hera-s9-den-thumb.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "0160010000764",
+            "product_name": "Chuột Bluetooth Akko Cat Theme Mouse Pink ANGIE",
+            "brand": "Akko",
+            "category_id": "134",
+            "category_name": "Chuột máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 370000.0,
+            "quantity_sold": 984,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/86/342568/chuot-bluetooth-akko-cat-theme-mouse-pink-angie-thumb-2-639020975893832934-600x600.jpg"
+          },
+          {
+            "productcode": "0220042004039",
+            "product_name": "Laptop Lenovo IdeaPad Slim 3 15IWC11 - 83RR00A8VN (Core 3 304, 8GB, 512GB, WUXGA, Win11)",
+            "brand": "Lenovo",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 16490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004039-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0220042003184",
+            "product_name": "Laptop Dell Inspiron 15 3530 - 71053721 (i7 1355U, 16GB, 512GB, Full HD 120Hz, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 24490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003184-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0220042003929",
+            "product_name": "Laptop Dell 14 DC14250 - DC14250-C3U085W11SLU-27 (Core 3 100U, 8GB, 512GB, Full HD+, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 18990000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003929-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "3641273000430",
+            "product_name": "Màn hình Gaming Asus TUF VG249QE5A 23.8 inch FHD/IPS/146Hz/1ms",
+            "brand": "Asus",
+            "category_id": "73",
+            "category_name": "Màn hình máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 2490000.0,
+            "quantity_sold": 979,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/5697/336402/asus-vg249qe5a-23-8-inch-fhd-ips-144hz-1ms-den-thumb-638791899894996908-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "0164779000163",
+            "product_name": "Loa Bluetooth Marshall Emberton III",
+            "brand": "Marshall",
+            "category_id": "132",
+            "category_name": "Loa",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4770000.0,
+            "quantity_sold": 998,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/loa-bluetooth-marshall-emberton-iii-thumb-3174132.jpg"
+          },
+          {
+            "productcode": "0232391002771",
+            "product_name": "Xiaomi Watch S4 41mm dây da",
+            "brand": "Xiaomi",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4790000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7077/354315/xiaomi-watch-s4-41mm-day-da-trang-thumb.jpg"
+          },
+          {
+            "productcode": "0160016000143",
+            "product_name": "Thẻ nhớ Kingston MicroSD 64GB Select Pls Gen3 100R",
+            "brand": "Kingston",
+            "category_id": "64",
+            "category_name": "Thẻ nhớ",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 430000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/55/358791/the-nho-kingston-microsd-64gb-select-pls-gen3-100r-thumb-638981235567787189-600x600.jpg"
+          },
+          {
+            "productcode": "1840431010775",
+            "product_name": "Ốp lưng Galaxy S25 FE PC Samsung Magnet Chính hãng",
+            "brand": "Samsung",
+            "category_id": "123",
+            "category_name": "Ốp lưng đ.thoại",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 395000.0,
+            "quantity_sold": 988,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/60/346261/op-lung-galaxy-s25-fe-pc-samsung-magnet-thumb-639111665907576313-600x600.jpg"
+          },
+          {
+            "productcode": "0164219000106",
+            "product_name": "Camera IP Ngoài Trời 360 Độ 4MP IMOU Cruiser Dual 2 Pro IPC-S7XFP-8U0WED",
+            "brand": "Imou",
+            "category_id": "127",
+            "category_name": "Camera giám sát",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 2040000.0,
+            "quantity_sold": 986,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/4728/339118/camera-ip-ngoai-troi-360-do-4mp-imou-cruiser-dual-2-pro-ipc-s7xfp-8u0wed-thumb-2-639040894777397755-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "1213779000379",
+            "product_name": "Bếp từ đôi âm BlueStone ICB-6833 4000W",
+            "brand": "Bluestone",
+            "category_id": "167",
+            "category_name": "Bếp từ",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8000000.0,
+            "quantity_sold": 999,
+            "url_image": "https://cdn.tgdd.vn/2026/10/timerseo/237805-600x600-2.jpg"
+          },
+          {
+            "productcode": "1751099000158",
+            "product_name": "Máy giặt Casper Inverter 10.5 kg WF-D105VGR1",
+            "brand": "Casper",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 6190000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/341984.jpg"
+          },
+          {
+            "productcode": "3050894000085",
+            "product_name": "Tủ mát Kangaroo 288 lít KG359AT",
+            "brand": "Kangaroo",
+            "category_id": "40",
+            "category_name": "Tủ đông, tủ mát",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 10690000.0,
+            "quantity_sold": 995,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/166/288649/tu-dong-kangaroo-288-lit-kg359at-1-600x600.jpg"
+          },
+          {
+            "productcode": "4844157000077",
+            "product_name": "Nồi cơm cao tần Panasonic 1.5 lít SR-HN151KRA",
+            "brand": "Panasonic",
+            "category_id": "86",
+            "category_name": "Nồi cơm điện",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 4620000.0,
+            "quantity_sold": 991,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/4844157000077-337514-clean-20261102-600x600.png"
+          },
+          {
+            "productcode": "1114169000186",
+            "product_name": "Bộ lõi lọc chức năng Karofi 6 lõi Smax HP 6.2",
+            "brand": "Karofi",
+            "category_id": "158",
+            "category_name": "Lõi máy lọc nước",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 1592000.0,
+            "quantity_sold": 986,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5105/306004/bo-loi-loc-chuc-nang-karofi-6-loi-smax-hp-62-110425-045127-038-300x300.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "1033263000970",
+            "product_name": "Chảo inox sâu chống dính đáy từ 24 cm Elmich EL-2459IC24 Impact bonding",
+            "brand": "Elmich",
+            "category_id": "206",
+            "category_name": "Chảo",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 535000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2403/329289/chao-inox-chong-dinh-day-tu-24-cm-elmich-el-2459ic24-111124-021808-373-300x300.jpg"
+          },
+          {
+            "productcode": "1033187000696",
+            "product_name": "Bình giữ nhiệt Inox 500 ml Delites XB-24106",
+            "brand": "Delites",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 220000.0,
+            "quantity_sold": 986,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5205/369744/binh-giu-nhiet-inox-500-ml-delites-xb-24106-thumb-639203283554226337-600x600.jpg"
+          },
+          {
+            "productcode": "1033265001090",
+            "product_name": "Bộ nồi quánh nhôm chống dính nắp kính Supor DuraRock H23102-T1",
+            "brand": "Supor",
+            "category_id": "205",
+            "category_name": "Nồi",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 990000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/2402/326769/bo-noi-quanh-nhom-nap-kinh-supor-dura-rock-h23102-t1-130624-051045-600x600.jpg"
+          },
+          {
+            "productcode": "1033241000551",
+            "product_name": "Thớt chặt gỗ tràm tròn 32 cm Trường Sơn SLC32",
+            "brand": "TrườNg Sơn",
+            "category_id": "283",
+            "category_name": "Thớt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 250000.0,
+            "quantity_sold": 962,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/6790/336203/thot-chat-go-tram-tron-32-cm-truong-son-slc32-100425-051417-184-300x300.jpg"
+          },
+          {
+            "productcode": "1032999001572",
+            "product_name": "Bộ 3 muỗng cơm inox 20.3 cm Eotia 319579",
+            "brand": "Eotia",
+            "category_id": "210",
+            "category_name": "Muỗng, đũa",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 70000.0,
+            "quantity_sold": 919,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5395/367935/bo-3-muong-com-inox-23-cm-eotia-319579-0-639171152686136224-300x300.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "4845000000264",
+            "product_name": "Máy massage cầm tay HUAXG Fascia M8221",
+            "brand": "Huaxg",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 239000.0,
+            "quantity_sold": 970,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/342705/may-massage-cam-tay-huaxg-m8221-thumb0-638941356350063948-600x600.jpg"
+          },
+          {
+            "productcode": "4845000000095",
+            "product_name": "Tông đơ cắt tóc đa năng pin sạc Coclear HC5216",
+            "brand": "Coclear",
+            "category_id": "175",
+            "category_name": "Tông đơ cắt tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 419000.0,
+            "quantity_sold": 912,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7458/338604/tong-do-cat-toc-pin-sac-va-dien-coclear-hc5216-thumb-638851685917350081-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000071",
+            "product_name": "Máy duỗi tóc Philips HP8401/00",
+            "brand": "Philips",
+            "category_id": "181",
+            "category_name": "Máy tạo kiểu tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 590000.0,
+            "quantity_sold": 891,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2342/316959/may-ep-toc-philips-hp8401-00-0-638918055950374019-600x600.jpg"
+          },
+          {
+            "productcode": "4845000000137",
+            "product_name": "Bồn ngâm chân massage Philips PPM6501",
+            "brand": "Philips",
+            "category_id": "184",
+            "category_name": "Bồn ngâm chân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 2790000.0,
+            "quantity_sold": 882,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9100/338606/bon-ngam-chan-massage-philips-ppm6501-thumb-638845666526151112-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000319",
+            "product_name": "Máy massage chân Kachi MK418",
+            "brand": "Kachi",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 650000.0,
+            "quantity_sold": 803,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/344820/may-massage-chan-kachi-mk418-thumksp-639016140438104925-300x300.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "fashion_sports_travel",
+        "group_name": "Thời trang, Thể thao & Du lịch",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "1274070001647",
+            "product_name": "Đồng hồ Smile Kid 41 mm Trẻ em SL143-08",
+            "brand": "Smile Kid",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 250000.0,
+            "quantity_sold": 998,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7264/362287/smile-kid-sl143-08-tre-em-thumb-639063329326472495-600x600.jpg"
+          },
+          {
+            "productcode": "1274063000687",
+            "product_name": "Đồng hồ ELIO 28 mm Nữ EL086-02",
+            "brand": "Elio",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 770000.0,
+            "quantity_sold": 995,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/249252/elio-el086-02-nu-thumb-fix-600x600.jpg"
+          },
+          {
+            "productcode": "1274059004802",
+            "product_name": "Đồng hồ MVW Star 43 mm Nam MSA090-01-S1",
+            "brand": "Mvw",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 3815000.0,
+            "quantity_sold": 976,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/321022/mvw-msa090-01-s1-nam-thumb-600x600.jpg"
+          },
+          {
+            "productcode": "0232391001292",
+            "product_name": "Đồng hồ CASIO Timeless 28.4 mm Nữ LTP-V005L-7BUDF",
+            "brand": "Casio",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 750000.0,
+            "quantity_sold": 964,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/199317/casio-ltp-v005l-7budf-den-thumb-600x600.jpg"
+          },
+          {
+            "productcode": "1314740000178",
+            "product_name": "Xe Đạp Đường Phố Thể Thao Thống Nhất GN 06-26 2.0 - 26 inch",
+            "brand": "ThốNg NhấT",
+            "category_id": "46",
+            "category_name": "Xe đạp",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 2890000.0,
+            "quantity_sold": 939,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9758/313315/xe-dap-duong-pho-the-thao-thong-nhat-gn-06-26-2-0-26-inch-cam-thumb-638665789929136015-550x340.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "tools_lighting",
+        "group_name": "Công cụ & Chiếu sáng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "1037400000005",
+            "product_name": "Ổ khóa gang 50 mm Việt-Tiệp 01526",
+            "brand": "Việt-Tiệp",
+            "category_id": "232",
+            "category_name": "Ổ Khoá",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 80000.0,
+            "quantity_sold": 723,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/8980/368084/o-khoa-treo-hop-kim-gang-viet-tiep-01526-50mm-090626-043155-269-300x300.jpg"
+          },
+          {
+            "productcode": "4844139000073",
+            "product_name": "Đèn pin sạc đa năng Comet CRT456",
+            "brand": "Comet",
+            "category_id": "152",
+            "category_name": "Đèn điện, đèn sạc",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 115000.0,
+            "quantity_sold": 715,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7075/368180/den-pin-sac-da-nang-comet-crt456-thumb-639178085882687421-600x600.jpg"
+          },
+          {
+            "productcode": "1037400000006",
+            "product_name": "Ổ khóa số xoay đồng 40 mm Việt-Tiệp 13131",
+            "brand": "Việt-Tiệp",
+            "category_id": "232",
+            "category_name": "Ổ Khoá",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 110000.0,
+            "quantity_sold": 709,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/8980/368085/o-khoa-so-hop-kim-dong-viet-tiep-13131-40mm-thumb-639166969369434909-300x300.jpg"
+          },
+          {
+            "productcode": "1037400000004",
+            "product_name": "Ổ khóa chống cắt kẽm 60 mm Việt-Tiệp 01602",
+            "brand": "Việt-Tiệp",
+            "category_id": "232",
+            "category_name": "Ổ Khoá",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 220000.0,
+            "quantity_sold": 613,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/8980/368083/o-khoa-chong-cat-hop-kim-kem-viet-tiep-01602-60mm-090626-041309-059-300x300.jpg"
+          },
+          {
+            "productcode": "0167060000015",
+            "product_name": "Đèn pha năng lượng mặt trời nhôm Modi MD-PT58-360-W",
+            "brand": "Modi",
+            "category_id": "301",
+            "category_name": "Đèn năng lượng mặt trời",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 1180000.0,
+            "quantity_sold": 613,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/14098/361935/den-pha-nang-luong-mat-troi-modi-md-pt58-360-w-thumb-2-639123640851669345-600x600.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case_title": "40 sản phẩm thuộc 8 nhóm (Bộ 2 - Sản phẩm độc lập, phân bổ thực tế)",
+    "file_name": "list_40_prods_8_groups_set2.json",
+    "total_products": 40,
+    "total_groups": 8,
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 6,
+        "products": [
+          {
+            "productcode": "0131491005206",
+            "product_name": "Điện thoại Vivo X300 Ultra 16GB/512GB",
+            "brand": "vivo",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 37990000.0,
+            "quantity_sold": 403,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/363408/vivo-x300-ultra-xanh-thumb-1.jpg"
+          },
+          {
+            "productcode": "0131491005225",
+            "product_name": "Điện thoại OPPO Find X9 Ultra 12GB/512GB",
+            "brand": "OPPO",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 49990000.0,
+            "quantity_sold": 387,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/364791/oppo-find-x9-ultra-cam-thumb-1.jpg"
+          },
+          {
+            "productcode": "0131491005246",
+            "product_name": "Điện thoại Nubia Air 5G 8GB/256GB",
+            "brand": "Nubia",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 5490000.0,
+            "quantity_sold": 384,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/366919/nubia-air-5g-8gb-256gb-vang-thumb.jpg"
+          },
+          {
+            "productcode": "0131491005528",
+            "product_name": "Điện thoại Xiaomi POCO F9 Ultra 12GB/256GB",
+            "brand": "Xiaomi",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 25990000.0,
+            "quantity_sold": 227,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/370849/xiaomi-poco-f9-ultra-5g-den-thumb.jpg"
+          },
+          {
+            "productcode": "0131491005337",
+            "product_name": "Điện thoại Nothing Phone (4a) Pro 12GB/256GB",
+            "brand": "Nothing Phone",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 14390000.0,
+            "quantity_sold": 217,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/368875/nothing-phone-4a-pro-trang-thumb.jpg"
+          },
+          {
+            "productcode": "0131491005555",
+            "product_name": "HONOR 600s 5G 6GB/128GB",
+            "brand": "Honor",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 9490000.0,
+            "quantity_sold": 182,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/honor-600s-vang-thumb140840.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "0220042003330",
+            "product_name": "Laptop Dell Gaming Alienware 16 Aurora AC16250 - 71072939 (Core 5 210H, 16GB, 512GB, RTX 3050 6GB, WQXGA 120Hz, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 33990000.0,
+            "quantity_sold": 974,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003330-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0162771000099",
+            "product_name": "Chuột Không dây Logitech M275",
+            "brand": "Logitech",
+            "category_id": "134",
+            "category_name": "Chuột máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 350000.0,
+            "quantity_sold": 973,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/86/328848/chuot-khong-day-logitech-m275-170824-061103-600x600.jpg"
+          },
+          {
+            "productcode": "3643563000342",
+            "product_name": "PC ROSA Crystal A10 Ryzen 3 3200G/8GB/256GB/Win11",
+            "brand": "Rosa",
+            "category_id": "72",
+            "category_name": "Máy tính để bàn",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 8190000.0,
+            "quantity_sold": 963,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/5698/329465/rosa-crystal-a10-ryzen-3-3200g-8gb-256gb-win11-thumb-1-638622765391038718-600x600.jpg"
+          },
+          {
+            "productcode": "3641273000548",
+            "product_name": "Màn hình Xiaomi A27i 2026 (27 inch Full HD, IPS, 144Hz, 6ms)",
+            "brand": "Xiaomi",
+            "category_id": "73",
+            "category_name": "Màn hình máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 2590000.0,
+            "quantity_sold": 961,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/5697/365874/man-hinh-xiaomi-a27i-2026-27-inch-full-hd-full-hd-144hz-6ms-thumb-639123708205126086-600x600.jpg"
+          },
+          {
+            "productcode": "3641273000379",
+            "product_name": "Màn hình Asus VY279HGR 27 inch FHD/IPS/120Hz/1ms",
+            "brand": "Asus",
+            "category_id": "73",
+            "category_name": "Màn hình máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 2490000.0,
+            "quantity_sold": 955,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5697/332008/asus-vy279hgr-27-inch-fhd-ips-120hz-1ms-den-thumb-1-638670213511249116-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 7,
+        "products": [
+          {
+            "productcode": "1840431010511",
+            "product_name": "Ốp lưng MagSafe Galaxy S25 Edge PC TPU Samsung Magnet Chính hãng",
+            "brand": "Samsung",
+            "category_id": "123",
+            "category_name": "Ốp lưng đ.thoại",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 350000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/60/336805/op-lung-magsafe-galaxy-s25-pc-tpu-samsung-edge-magnet-thumb-639112531662794282-600x600.jpg"
+          },
+          {
+            "productcode": "1273359001239",
+            "product_name": "Dây da đồng hồ 18mm SL101-02 Nâu",
+            "brand": "Mvw",
+            "category_id": "57",
+            "category_name": "Dây đồng hồ",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 10000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7978/283677/day-mvw-sl101-02-da-nau-thumbnew-600x600.jpg"
+          },
+          {
+            "productcode": "0163345001057",
+            "product_name": "Cáp sạc nhanh Type-C - Type-C 100W 1m Baseus New Braided CB000217",
+            "brand": "Baseus",
+            "category_id": "120",
+            "category_name": "Cáp sạc",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 190000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/58/367369/cap-sac-nhanh-type-c-type-c-100w-1m-baseus-new-braided-cb000217-thumb-1-639147971382600157-600x600.jpg"
+          },
+          {
+            "productcode": "1840431010766",
+            "product_name": "Bao da Galaxy Tab S11 kèm bàn phím Samsung Chính hãng",
+            "brand": "Samsung",
+            "category_id": "122",
+            "category_name": "Ốp lưng tablet",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 3190000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1662/345527/bao-da-galaxy-tab-s11-kem-ban-phim-samsung-thumb-638936283441036709-600x600.jpg"
+          },
+          {
+            "productcode": "0164540000327",
+            "product_name": "Tai nghe Bluetooth Chụp Tai Alpha Works Lite 660",
+            "brand": "Alpha Works",
+            "category_id": "133",
+            "category_name": "Tai nghe",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 550000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdn.tgdd.vn/2026/08/timerseo/0164540000327.jpg"
+          },
+          {
+            "productcode": "0232391002580",
+            "product_name": "Amazfit T-Rex 3 47.1mm dây silicone",
+            "brand": "Amazfit",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 5990000.0,
+            "quantity_sold": 963,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7077/329945/amazfit-t-rex-3-den-tn-1.jpg"
+          },
+          {
+            "productcode": "0161231000225",
+            "product_name": "Miếng dán màn hình Oppo Reno 2F - TA",
+            "brand": "Hãng Khác",
+            "category_id": "124",
+            "category_name": "Miếng dán",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 25000.0,
+            "quantity_sold": 952,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/1363/317838/mieng-dan-man-hinh-oppo-reno-2f-thumb-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 6,
+        "products": [
+          {
+            "productcode": "1113219000112",
+            "product_name": "Máy lọc nước RO Hydrogen Kangaroo KG100HU 5 lõi",
+            "brand": "Kangaroo",
+            "category_id": "157",
+            "category_name": "Máy lọc nước",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 4990000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/3385/204077/may-loc-nuoc-ro-kangaroo-kg100hu-220524-050817-600x600.jpg"
+          },
+          {
+            "productcode": "4844142000300",
+            "product_name": "Bình đun siêu tốc Magic 1.8 lít A-072",
+            "brand": "Magic",
+            "category_id": "104",
+            "category_name": "Bình đun siêu tốc",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 129000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/4844142000300-363393-clean-20261102-600x600.png"
+          },
+          {
+            "productcode": "4844154000429",
+            "product_name": "Máy làm sữa hạt đa năng Bluestone SMB-7327",
+            "brand": "Bluestone",
+            "category_id": "269",
+            "category_name": "Máy làm sữa hạt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 1290000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2322/366708/may-lam-sua-hat-da-nang-bluestone-smb-7327-thumb-639143522540963300-300x300.jpg"
+          },
+          {
+            "productcode": "3051099001589",
+            "product_name": "Tháp giặt sấy LG WashTower Inverter giặt 14 kg - sấy 10 kg WT1410NHB",
+            "brand": "LG",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 40490000.0,
+            "quantity_sold": 981,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/305841-600x600-1.jpg"
+          },
+          {
+            "productcode": "3051099001655",
+            "product_name": "Máy giặt Toshiba Inverter 10.5 kg TW-T25BZU115MWV(MG)",
+            "brand": "Toshiba",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 9990000.0,
+            "quantity_sold": 981,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/321753.jpg"
+          },
+          {
+            "productcode": "4846000000066",
+            "product_name": "Máy ép chậm BlueStone SJB-6557",
+            "brand": "Bluestone",
+            "category_id": "98",
+            "category_name": "Máy ép trái cây",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 3190000.0,
+            "quantity_sold": 979,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/4846000000066-338017-plain-20261104-600x600.png"
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 5,
+        "products": [
+          {
+            "productcode": "1032999001543",
+            "product_name": "Túi rác tự hủy sinh học Inochi Mori-Soji 23.5 x 5.6cm*1000gr màu đen",
+            "brand": "Inochi",
+            "category_id": "293",
+            "category_name": "Túi đựng rác",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 50000.0,
+            "quantity_sold": 911,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/6553/361585/tui-rac-tu-huy-sinh-hoc-inochi-mori-soji-235-x-56cm1000gr-mau-den-020226-112904-887-300x300.jpg"
+          },
+          {
+            "productcode": "1033263001090",
+            "product_name": "Chảo inox nguyên khối sâu 24 cm Pramie PP130B102",
+            "brand": "Pramie",
+            "category_id": "206",
+            "category_name": "Chảo",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 300000.0,
+            "quantity_sold": 894,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2403/370344/chao-inox-nguyen-khoi-sau-24-cm-pramie-pp130b102-thumb-639219753526328657-600x600.jpg"
+          },
+          {
+            "productcode": "1033187000625",
+            "product_name": "Ly giữ nhiệt Inox 530 ml Delites XB-24187 Bạc",
+            "brand": "Delites",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 169000.0,
+            "quantity_sold": 887,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5205/361310/ly-giu-nhiet-inox-530-ml-delites-xb-24187-bac-thumb-639122749677116851-600x600.jpg"
+          },
+          {
+            "productcode": "1033241000615",
+            "product_name": "Bộ dao cán nhựa Delites LD-TS154-5",
+            "brand": "Delites",
+            "category_id": "282",
+            "category_name": "Dao",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 59000.0,
+            "quantity_sold": 878,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/3187/370283/bo-dao-can-nhua-delites-ld-ts154-5-thumb-639218725765434453-600x600.JPG"
+          },
+          {
+            "productcode": "0160531000028",
+            "product_name": "Pin AAA 10 viên Alkaline Philips LR03P10TS",
+            "brand": "Philips",
+            "category_id": "149",
+            "category_name": "Pin tiểu",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 130000.0,
+            "quantity_sold": 877,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/56/362343/pin-aaa-10-vien-alkaline-philips-lr03p10ts-thumb-639050223081770936-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "4840967000257",
+            "product_name": "Máy sấy tóc Coclear CH6608",
+            "brand": "Coclear",
+            "category_id": "172",
+            "category_name": "Máy sấy tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 350000.0,
+            "quantity_sold": 790,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1991/367009/may-say-toc-coclear-ch6608-thumbksp-639162130362180951-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000179",
+            "product_name": "Súng massage cầm tay Xiaomi Mini 2 GL",
+            "brand": "Xiaomi",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 1300000.0,
+            "quantity_sold": 750,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/340232/sung-massage-cam-tay-xiaomi-mini-2-gl-thumbksp-639016143771714337-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000090",
+            "product_name": "Máy tăm nước cầm tay Hawonkoo WFH-001",
+            "brand": "Hawonkoo",
+            "category_id": "183",
+            "category_name": "Máy tăm nước",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 790000.0,
+            "quantity_sold": 723,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9099/338560/may-tam-nuoc-cam-tay-hawonkoo-wfh-001-0-638851740448311529-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000275",
+            "product_name": "Máy massage cổ vai gáy Buheung MK-332",
+            "brand": "Buheung",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 590000.0,
+            "quantity_sold": 634,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/342444/may-massage-co-vai-gay-buheung-mk-332-thumbksp-639016150299100443-300x300.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "fashion_sports_travel",
+        "group_name": "Thời trang, Thể thao & Du lịch",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "1845975000014",
+            "product_name": "Túi xách chống sốc kèm túi phụ kiện Innostyle GuardianTech 14 inch GT-C21",
+            "brand": "Innostyle",
+            "category_id": "59",
+            "category_name": "Balo, túi chống sốc",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 594000.0,
+            "quantity_sold": 907,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7923/327241/tui-chong-soc-innostyle-guardiantech-14-inch-gt-c21-den-tn-1.jpg"
+          },
+          {
+            "productcode": "1274063000269",
+            "product_name": "Đồng hồ Nữ Timeless Casio LTP-V005L-7AUDF",
+            "brand": "Casio",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 750000.0,
+            "quantity_sold": 895,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/208941/casio-ltp-v005l-7audf-nu-avatar-1-600x600.jpg"
+          },
+          {
+            "productcode": "1845975000241",
+            "product_name": "Túi chống sốc Laptop 16 inch Zadez ZLC-8372B",
+            "brand": "Zadez",
+            "category_id": "59",
+            "category_name": "Balo, túi chống sốc",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 351000.0,
+            "quantity_sold": 883,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7923/359488/tui-chong-soc-laptop-16-inch-zadez-zlc-8372b-thumb-639001889894815050-600x600.jpg"
+          },
+          {
+            "productcode": "1274060000416",
+            "product_name": "Đồng hồ Nam Edifice Casio EFR-526L-1AVUDF",
+            "brand": "Edifice Casio",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 3145000.0,
+            "quantity_sold": 829,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/209086/edifice-casio-efr-526l-1avudf-nam-avatar-1-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "tools_lighting",
+        "group_name": "Công cụ & Chiếu sáng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "4847179000020",
+            "product_name": "Bóng đèn Led Bulb tròn 7W Sunhouse Eco SHE-LNA01-7W-E",
+            "brand": "Sunhouse",
+            "category_id": "317",
+            "category_name": "Bóng đèn led",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 18000.0,
+            "quantity_sold": 610,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7358/366720/bong-den-led-nam-7w-sunhouse-eco-she-lna01-7w-e-m-thumb-639150426452911005-600x600.jpg"
+          },
+          {
+            "productcode": "0167060000003",
+            "product_name": "Đèn đường năng lượng mặt trời Modi nhôm MD-SLT31-600-W",
+            "brand": "Modi",
+            "category_id": "301",
+            "category_name": "Đèn năng lượng mặt trời",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 2180000.0,
+            "quantity_sold": 568,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/14098/361931/den-duong-nang-luong-mat-troi-modi-md-slt31-600-w-thumb-2-639110892511857346-600x600.jpg"
+          },
+          {
+            "productcode": "4844152000102",
+            "product_name": "Ổ cắm điện Điện Quang 5 lỗ 2m ECO ESK 5BR",
+            "brand": "ĐiệN Quang",
+            "category_id": "253",
+            "category_name": "Ổ cắm - Phích cắm",
+            "group_id": "tools_lighting",
+            "group_name": "Công cụ & Chiếu sáng",
+            "price": 130000.0,
+            "quantity_sold": 531,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/4844152000102-369049-gallery-20261102-600x600.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case_title": "20 sản phẩm thuộc 6 nhóm",
+    "file_name": "list_20_prods_6_groups.json",
+    "total_products": 20,
+    "total_groups": 6,
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "2440931000597",
+            "product_name": "Máy tính bảng iPad 10 5G 256GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20090000.0,
+            "quantity_sold": 951,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/522/295452/ipad-10-wifi-cellular-pink-thumb.jpeg"
+          },
+          {
+            "productcode": "0131491005271",
+            "product_name": "Điện thoại Tecno Spark 50 4GB/128GB",
+            "brand": "Tecno",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 4590000.0,
+            "quantity_sold": 935,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367204/tecno-spark-50-4gb-128gb-den-thumb.png"
+          },
+          {
+            "productcode": "0131491005109",
+            "product_name": "Điện thoại Motorola Signature 12GB/256GB",
+            "brand": "Motorola",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20990000.0,
+            "quantity_sold": 879,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/motorola-signature-ghi-den-thumbnew102351.jpg"
+          },
+          {
+            "productcode": "0131491005284",
+            "product_name": "Điện thoại Honor 600 8GB/256GB",
+            "brand": "Honor",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 16790000.0,
+            "quantity_sold": 538,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367010/honor-600-trang-thumb.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "0160010000764",
+            "product_name": "Chuột Bluetooth Akko Cat Theme Mouse Pink ANGIE",
+            "brand": "Akko",
+            "category_id": "134",
+            "category_name": "Chuột máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 370000.0,
+            "quantity_sold": 984,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/86/342568/chuot-bluetooth-akko-cat-theme-mouse-pink-angie-thumb-2-639020975893832934-600x600.jpg"
+          },
+          {
+            "productcode": "0220042004039",
+            "product_name": "Laptop Lenovo IdeaPad Slim 3 15IWC11 - 83RR00A8VN (Core 3 304, 8GB, 512GB, WUXGA, Win11)",
+            "brand": "Lenovo",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 16490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004039-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0220042003184",
+            "product_name": "Laptop Dell Inspiron 15 3530 - 71053721 (i7 1355U, 16GB, 512GB, Full HD 120Hz, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 24490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003184-laptop-tron-20261104-600x600.png"
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "0164779000163",
+            "product_name": "Loa Bluetooth Marshall Emberton III",
+            "brand": "Marshall",
+            "category_id": "132",
+            "category_name": "Loa",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4770000.0,
+            "quantity_sold": 998,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/loa-bluetooth-marshall-emberton-iii-thumb-3174132.jpg"
+          },
+          {
+            "productcode": "0232391002771",
+            "product_name": "Xiaomi Watch S4 41mm dây da",
+            "brand": "Xiaomi",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4790000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7077/354315/xiaomi-watch-s4-41mm-day-da-trang-thumb.jpg"
+          },
+          {
+            "productcode": "0160016000143",
+            "product_name": "Thẻ nhớ Kingston MicroSD 64GB Select Pls Gen3 100R",
+            "brand": "Kingston",
+            "category_id": "64",
+            "category_name": "Thẻ nhớ",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 430000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/55/358791/the-nho-kingston-microsd-64gb-select-pls-gen3-100r-thumb-638981235567787189-600x600.jpg"
+          },
+          {
+            "productcode": "1840431010775",
+            "product_name": "Ốp lưng Galaxy S25 FE PC Samsung Magnet Chính hãng",
+            "brand": "Samsung",
+            "category_id": "123",
+            "category_name": "Ốp lưng đ.thoại",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 395000.0,
+            "quantity_sold": 988,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/60/346261/op-lung-galaxy-s25-fe-pc-samsung-magnet-thumb-639111665907576313-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "1213779000379",
+            "product_name": "Bếp từ đôi âm BlueStone ICB-6833 4000W",
+            "brand": "Bluestone",
+            "category_id": "167",
+            "category_name": "Bếp từ",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8000000.0,
+            "quantity_sold": 999,
+            "url_image": "https://cdn.tgdd.vn/2026/10/timerseo/237805-600x600-2.jpg"
+          },
+          {
+            "productcode": "1751099000158",
+            "product_name": "Máy giặt Casper Inverter 10.5 kg WF-D105VGR1",
+            "brand": "Casper",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 6190000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/341984.jpg"
+          },
+          {
+            "productcode": "3050894000085",
+            "product_name": "Tủ mát Kangaroo 288 lít KG359AT",
+            "brand": "Kangaroo",
+            "category_id": "40",
+            "category_name": "Tủ đông, tủ mát",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 10690000.0,
+            "quantity_sold": 995,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/166/288649/tu-dong-kangaroo-288-lit-kg359at-1-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "1033263000970",
+            "product_name": "Chảo inox sâu chống dính đáy từ 24 cm Elmich EL-2459IC24 Impact bonding",
+            "brand": "Elmich",
+            "category_id": "206",
+            "category_name": "Chảo",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 535000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2403/329289/chao-inox-chong-dinh-day-tu-24-cm-elmich-el-2459ic24-111124-021808-373-300x300.jpg"
+          },
+          {
+            "productcode": "1033187000696",
+            "product_name": "Bình giữ nhiệt Inox 500 ml Delites XB-24106",
+            "brand": "Delites",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 220000.0,
+            "quantity_sold": 986,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5205/369744/binh-giu-nhiet-inox-500-ml-delites-xb-24106-thumb-639203283554226337-600x600.jpg"
+          },
+          {
+            "productcode": "1033265001090",
+            "product_name": "Bộ nồi quánh nhôm chống dính nắp kính Supor DuraRock H23102-T1",
+            "brand": "Supor",
+            "category_id": "205",
+            "category_name": "Nồi",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 990000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/2402/326769/bo-noi-quanh-nhom-nap-kinh-supor-dura-rock-h23102-t1-130624-051045-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "4845000000264",
+            "product_name": "Máy massage cầm tay HUAXG Fascia M8221",
+            "brand": "Huaxg",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 239000.0,
+            "quantity_sold": 970,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/342705/may-massage-cam-tay-huaxg-m8221-thumb0-638941356350063948-600x600.jpg"
+          },
+          {
+            "productcode": "4845000000095",
+            "product_name": "Tông đơ cắt tóc đa năng pin sạc Coclear HC5216",
+            "brand": "Coclear",
+            "category_id": "175",
+            "category_name": "Tông đơ cắt tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 419000.0,
+            "quantity_sold": 912,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7458/338604/tong-do-cat-toc-pin-sac-va-dien-coclear-hc5216-thumb-638851685917350081-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000071",
+            "product_name": "Máy duỗi tóc Philips HP8401/00",
+            "brand": "Philips",
+            "category_id": "181",
+            "category_name": "Máy tạo kiểu tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 590000.0,
+            "quantity_sold": 891,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2342/316959/may-ep-toc-philips-hp8401-00-0-638918055950374019-600x600.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case_title": "25 sản phẩm thuộc 7 nhóm",
+    "file_name": "list_25_prods_7_groups.json",
+    "total_products": 25,
+    "total_groups": 7,
+    "groups": [
+      {
+        "group_id": "phones_tablets",
+        "group_name": "Điện thoại & Máy tính bảng",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "2440931000597",
+            "product_name": "Máy tính bảng iPad 10 5G 256GB",
+            "brand": "Ipad (Apple)",
+            "category_id": "30",
+            "category_name": "Máy tính bảng",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20090000.0,
+            "quantity_sold": 951,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/522/295452/ipad-10-wifi-cellular-pink-thumb.jpeg"
+          },
+          {
+            "productcode": "0131491005271",
+            "product_name": "Điện thoại Tecno Spark 50 4GB/128GB",
+            "brand": "Tecno",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 4590000.0,
+            "quantity_sold": 935,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367204/tecno-spark-50-4gb-128gb-den-thumb.png"
+          },
+          {
+            "productcode": "0131491005109",
+            "product_name": "Điện thoại Motorola Signature 12GB/256GB",
+            "brand": "Motorola",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 20990000.0,
+            "quantity_sold": 879,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/motorola-signature-ghi-den-thumbnew102351.jpg"
+          },
+          {
+            "productcode": "0131491005284",
+            "product_name": "Điện thoại Honor 600 8GB/256GB",
+            "brand": "Honor",
+            "category_id": "27",
+            "category_name": "Điện thoại",
+            "group_id": "phones_tablets",
+            "group_name": "Điện thoại & Máy tính bảng",
+            "price": 16790000.0,
+            "quantity_sold": 538,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/42/367010/honor-600-trang-thumb.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "computers_office",
+        "group_name": "Máy tính & Văn phòng",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "0160010000764",
+            "product_name": "Chuột Bluetooth Akko Cat Theme Mouse Pink ANGIE",
+            "brand": "Akko",
+            "category_id": "134",
+            "category_name": "Chuột máy tính",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 370000.0,
+            "quantity_sold": 984,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/86/342568/chuot-bluetooth-akko-cat-theme-mouse-pink-angie-thumb-2-639020975893832934-600x600.jpg"
+          },
+          {
+            "productcode": "0220042004039",
+            "product_name": "Laptop Lenovo IdeaPad Slim 3 15IWC11 - 83RR00A8VN (Core 3 304, 8GB, 512GB, WUXGA, Win11)",
+            "brand": "Lenovo",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 16490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004039-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0220042003184",
+            "product_name": "Laptop Dell Inspiron 15 3530 - 71053721 (i7 1355U, 16GB, 512GB, Full HD 120Hz, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 24490000.0,
+            "quantity_sold": 983,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003184-laptop-tron-20261104-600x600.png"
+          },
+          {
+            "productcode": "0220042003929",
+            "product_name": "Laptop Dell 14 DC14250 - DC14250-C3U085W11SLU-27 (Core 3 100U, 8GB, 512GB, Full HD+, OfficeH24+365, Win11)",
+            "brand": "Dell",
+            "category_id": "28",
+            "category_name": "Laptop",
+            "group_id": "computers_office",
+            "group_name": "Máy tính & Văn phòng",
+            "price": 18990000.0,
+            "quantity_sold": 982,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003929-laptop-tron-20261104-600x600.png"
+          }
+        ]
+      },
+      {
+        "group_id": "smart_accessories",
+        "group_name": "Thiết bị thông minh & Phụ kiện",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "0164779000163",
+            "product_name": "Loa Bluetooth Marshall Emberton III",
+            "brand": "Marshall",
+            "category_id": "132",
+            "category_name": "Loa",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4770000.0,
+            "quantity_sold": 998,
+            "url_image": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/loa-bluetooth-marshall-emberton-iii-thumb-3174132.jpg"
+          },
+          {
+            "productcode": "0232391002771",
+            "product_name": "Xiaomi Watch S4 41mm dây da",
+            "brand": "Xiaomi",
+            "category_id": "49",
+            "category_name": "Đồng hồ thông minh",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 4790000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7077/354315/xiaomi-watch-s4-41mm-day-da-trang-thumb.jpg"
+          },
+          {
+            "productcode": "0160016000143",
+            "product_name": "Thẻ nhớ Kingston MicroSD 64GB Select Pls Gen3 100R",
+            "brand": "Kingston",
+            "category_id": "64",
+            "category_name": "Thẻ nhớ",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 430000.0,
+            "quantity_sold": 994,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/55/358791/the-nho-kingston-microsd-64gb-select-pls-gen3-100r-thumb-638981235567787189-600x600.jpg"
+          },
+          {
+            "productcode": "1840431010775",
+            "product_name": "Ốp lưng Galaxy S25 FE PC Samsung Magnet Chính hãng",
+            "brand": "Samsung",
+            "category_id": "123",
+            "category_name": "Ốp lưng đ.thoại",
+            "group_id": "smart_accessories",
+            "group_name": "Thiết bị thông minh & Phụ kiện",
+            "price": 395000.0,
+            "quantity_sold": 988,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/60/346261/op-lung-galaxy-s25-fe-pc-samsung-magnet-thumb-639111665907576313-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "appliances_kitchen",
+        "group_name": "Điện gia dụng & Nhà bếp",
+        "product_count": 4,
+        "products": [
+          {
+            "productcode": "1213779000379",
+            "product_name": "Bếp từ đôi âm BlueStone ICB-6833 4000W",
+            "brand": "Bluestone",
+            "category_id": "167",
+            "category_name": "Bếp từ",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 8000000.0,
+            "quantity_sold": 999,
+            "url_image": "https://cdn.tgdd.vn/2026/10/timerseo/237805-600x600-2.jpg"
+          },
+          {
+            "productcode": "1751099000158",
+            "product_name": "Máy giặt Casper Inverter 10.5 kg WF-D105VGR1",
+            "brand": "Casper",
+            "category_id": "115",
+            "category_name": "Máy giặt",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 6190000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/341984.jpg"
+          },
+          {
+            "productcode": "3050894000085",
+            "product_name": "Tủ mát Kangaroo 288 lít KG359AT",
+            "brand": "Kangaroo",
+            "category_id": "40",
+            "category_name": "Tủ đông, tủ mát",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 10690000.0,
+            "quantity_sold": 995,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/166/288649/tu-dong-kangaroo-288-lit-kg359at-1-600x600.jpg"
+          },
+          {
+            "productcode": "4844157000077",
+            "product_name": "Nồi cơm cao tần Panasonic 1.5 lít SR-HN151KRA",
+            "brand": "Panasonic",
+            "category_id": "86",
+            "category_name": "Nồi cơm điện",
+            "group_id": "appliances_kitchen",
+            "group_name": "Điện gia dụng & Nhà bếp",
+            "price": 4620000.0,
+            "quantity_sold": 991,
+            "url_image": "https://cdn.tgdd.vn/2026/11/timerseo/4844157000077-337514-clean-20261102-600x600.png"
+          }
+        ]
+      },
+      {
+        "group_id": "household",
+        "group_name": "Đồ gia dụng & Tiêu dùng",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "1033263000970",
+            "product_name": "Chảo inox sâu chống dính đáy từ 24 cm Elmich EL-2459IC24 Impact bonding",
+            "brand": "Elmich",
+            "category_id": "206",
+            "category_name": "Chảo",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 535000.0,
+            "quantity_sold": 997,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2403/329289/chao-inox-chong-dinh-day-tu-24-cm-elmich-el-2459ic24-111124-021808-373-300x300.jpg"
+          },
+          {
+            "productcode": "1033187000696",
+            "product_name": "Bình giữ nhiệt Inox 500 ml Delites XB-24106",
+            "brand": "Delites",
+            "category_id": "208",
+            "category_name": "Bình, ly giữ nhiệt",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 220000.0,
+            "quantity_sold": 986,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/5205/369744/binh-giu-nhiet-inox-500-ml-delites-xb-24106-thumb-639203283554226337-600x600.jpg"
+          },
+          {
+            "productcode": "1033265001090",
+            "product_name": "Bộ nồi quánh nhôm chống dính nắp kính Supor DuraRock H23102-T1",
+            "brand": "Supor",
+            "category_id": "205",
+            "category_name": "Nồi",
+            "group_id": "household",
+            "group_name": "Đồ gia dụng & Tiêu dùng",
+            "price": 990000.0,
+            "quantity_sold": 985,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/2402/326769/bo-noi-quanh-nhom-nap-kinh-supor-dura-rock-h23102-t1-130624-051045-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "health_personal_care",
+        "group_name": "Sức khỏe & Chăm sóc cá nhân",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "4845000000264",
+            "product_name": "Máy massage cầm tay HUAXG Fascia M8221",
+            "brand": "Huaxg",
+            "category_id": "178",
+            "category_name": "Máy massage cá nhân",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 239000.0,
+            "quantity_sold": 970,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/9600/342705/may-massage-cam-tay-huaxg-m8221-thumb0-638941356350063948-600x600.jpg"
+          },
+          {
+            "productcode": "4845000000095",
+            "product_name": "Tông đơ cắt tóc đa năng pin sạc Coclear HC5216",
+            "brand": "Coclear",
+            "category_id": "175",
+            "category_name": "Tông đơ cắt tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 419000.0,
+            "quantity_sold": 912,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7458/338604/tong-do-cat-toc-pin-sac-va-dien-coclear-hc5216-thumb-638851685917350081-300x300.jpg"
+          },
+          {
+            "productcode": "4845000000071",
+            "product_name": "Máy duỗi tóc Philips HP8401/00",
+            "brand": "Philips",
+            "category_id": "181",
+            "category_name": "Máy tạo kiểu tóc",
+            "group_id": "health_personal_care",
+            "group_name": "Sức khỏe & Chăm sóc cá nhân",
+            "price": 590000.0,
+            "quantity_sold": 891,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2342/316959/may-ep-toc-philips-hp8401-00-0-638918055950374019-600x600.jpg"
+          }
+        ]
+      },
+      {
+        "group_id": "fashion_sports_travel",
+        "group_name": "Thời trang, Thể thao & Du lịch",
+        "product_count": 3,
+        "products": [
+          {
+            "productcode": "1274070001647",
+            "product_name": "Đồng hồ Smile Kid 41 mm Trẻ em SL143-08",
+            "brand": "Smile Kid",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 250000.0,
+            "quantity_sold": 998,
+            "url_image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7264/362287/smile-kid-sl143-08-tre-em-thumb-639063329326472495-600x600.jpg"
+          },
+          {
+            "productcode": "1274063000687",
+            "product_name": "Đồng hồ ELIO 28 mm Nữ EL086-02",
+            "brand": "Elio",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 770000.0,
+            "quantity_sold": 995,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/249252/elio-el086-02-nu-thumb-fix-600x600.jpg"
+          },
+          {
+            "productcode": "1274059004802",
+            "product_name": "Đồng hồ MVW Star 43 mm Nam MSA090-01-S1",
+            "brand": "Mvw",
+            "category_id": "50",
+            "category_name": "Đồng hồ thời trang",
+            "group_id": "fashion_sports_travel",
+            "group_name": "Thời trang, Thể thao & Du lịch",
+            "price": 3815000.0,
+            "quantity_sold": 976,
+            "url_image": "https://cdn.tgdd.vn/Products/Images/7264/321022/mvw-msa090-01-s1-nam-thumb-600x600.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

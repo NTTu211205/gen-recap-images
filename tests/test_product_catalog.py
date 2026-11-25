@@ -133,7 +133,7 @@ class ProductCatalogTests(unittest.TestCase):
             plan["requests"][key]["prompt"] for key in category["request_keys"]
         )
         self.assertIn("Điện thoại", prompt)
-        self.assertEqual(len(plan["requests"]), 1)
+        self.assertEqual(len(plan["requests"]), 2)
 
     def test_layout_keeps_image_key_and_category_name_together(self):
         for count in range(1, 9):
@@ -364,7 +364,7 @@ class ProductCatalogTests(unittest.TestCase):
         } for i in range(10)}
         plan = build_catalog_plan(list(catalog), catalog)
         category = plan["categories"][0]
-        self.assertEqual(len(category["request_keys"]), 1)
+        self.assertEqual(len(category["request_keys"]), 4)
         image = Image.new("RGBA", (100, 100))
         ImageDraw.Draw(image).rectangle((25, 15, 75, 85), fill="red")
         data = io.BytesIO()
