@@ -89,27 +89,28 @@ def generate_recap(
     workers = 1 if isinstance(client, MWGImageClient) else image_workers
     started = perf_counter()
 
-    def generate_asset(item: tuple[str, dict]) -> tuple[str, Path]:
+    def generate_asset(item: tuple[str, dict]) -> tuple[str, Path, Path]:
         key, payload = item
         request_started = perf_counter()
         logger.info("Generating image request: %s", key)
         response = _invoke_generate_image(client, payload["prompt"], payload)
         paths = save_images(response, output_name=key, output_dir=run_dir)
+        source_path = paths[0]
         logger.info(
             "Image request %s saved in %.2fs",
             key, perf_counter() - request_started,
         )
-        return key, paths[0]
+        settings = request_settings.get(key, {})
+        cutout_path = save_product_cutout(
+            source_path,
+            preserve_interior=bool(settings.get("preserve_interior")),
+        )
+        return key, source_path, cutout_path
 
     with ordered_parallel_map(
         generate_asset, plan["requests"].items(), workers,
     ) as generated:
-        for key, source_path in generated:
-            settings = request_settings.get(key, {})
-            cutout_path = save_product_cutout(
-                source_path,
-                preserve_interior=bool(settings.get("preserve_interior")),
-            )
+        for key, source_path, cutout_path in generated:
             request_assets[key] = cutout_path
             source_assets[key] = source_path
             _write_json(run_dir / "request_assets.json", {

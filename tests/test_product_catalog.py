@@ -326,7 +326,9 @@ class ProductCatalogTests(unittest.TestCase):
                     generate_recap(client, plan, root, image_workers=2)
             compose.assert_not_called()
             run_dir = next(root.glob("recap_*"))
-            saved = list(run_dir.glob("b_*.png"))
+            saved = [
+                p for p in run_dir.glob("b_*.png") if "_cutout" not in p.name
+            ]
             self.assertEqual(len(saved), 1)
             self.assertEqual(saved[0].read_bytes(), data.getvalue())
         self.assertEqual(client.generate_image.call_count, 2)
