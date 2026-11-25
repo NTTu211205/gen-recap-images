@@ -10,7 +10,7 @@ from typing import Any
 from src.catalog.product_groups import (
     group_products, load_category_groups, product_scale,
 )
-from src.prompts.products import build_edit_image_prompt
+from src.prompts.products import build_group_edit_prompt
 
 
 def normalize_productcode(value: Any) -> str:
@@ -192,33 +192,35 @@ def build_catalog_plan(
         )
         result.append(category)
         groups[category["key"]] = [item["name"] for item in selected]
-        category["request_keys"] = []
-        category["request_settings"] = {}
-        for index, item in enumerate(selected):
-            key = category["key"]
-            if index:
-                key += f"_product_{index + 1:03d}"
-            category["request_keys"].append(key)
-            category["request_settings"][key] = {
-                "productcode": item["productcode"],
-                "preserve_interior": item["preserve_interior"],
-                "scale": item.get("scale", 0.75),
+        group_products = selected[:3]
+        image_urls = [
+            item["url_image"] for item in group_products
+            if item.get("url_image")
+        ][:3]
+        key = category["key"]
+        category["request_keys"] = [key]
+        category["request_settings"] = {
+            key: {
+                "productcode": group_products[0]["productcode"],
+                "productcodes": [
+                    item["productcode"] for item in group_products
+                ],
+                "preserve_interior": any(
+                    bool(item.get("preserve_interior"))
+                    for item in group_products
+                ),
+                "scale": category["scale"],
             }
-            product_type = (
-                item.get("category_name")
-                or category.get("name")
-                or "product"
-            )
-            prompt = build_edit_image_prompt(product_type)
-            image_url = item.get("url_image") or ""
-            requests[key] = {
-                "prompt": prompt,
-                "images": [image_url] if image_url else [],
-                "size": target_size,
-                "n": 1,
-                "steps": target_steps,
-                "cfg": target_cfg,
-            }
+        }
+        prompt = build_group_edit_prompt(group_products)
+        requests[key] = {
+            "prompt": prompt,
+            "images": image_urls,
+            "size": target_size,
+            "n": 1,
+            "steps": target_steps,
+            "cfg": target_cfg,
+        }
 
     return {
         "version": 5,

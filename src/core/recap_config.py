@@ -15,7 +15,7 @@ class RecapConfig:
     )
     model: str = "MWG"
     image_size: str = "512x512"
-    steps: int = 8
+    steps: int = 4
     cfg: float = 1.0
     timeout: tuple[float, float] = (15, 300)
     image_workers: int = 2

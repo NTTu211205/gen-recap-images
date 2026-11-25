@@ -51,9 +51,10 @@ class GroupPromptTests(unittest.TestCase):
         category = plan["categories"][0]
         self.assertEqual(len(category["selected_products"]), 8)
         self.assertEqual(category["omitted_count"], 0)
-        self.assertEqual(len(plan["requests"]), 8)
-        self.assertEqual(len(category["request_keys"]), 8)
-        for index, key in enumerate(category["request_keys"]):
-            settings = category["request_settings"][key]
-            self.assertEqual(settings["productcode"], str(7 - index))
-            self.assertEqual(plan["requests"][key]["n"], 1)
+        self.assertEqual(len(plan["requests"]), 1)
+        self.assertEqual(len(category["request_keys"]), 1)
+        key = category["request_keys"][0]
+        settings = category["request_settings"][key]
+        self.assertEqual(settings["productcode"], "7")
+        self.assertEqual(len(settings["productcodes"]), 3)
+        self.assertEqual(plan["requests"][key]["n"], 1)

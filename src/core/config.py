@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     MWG_COOKIE: SecretStr | None = None
     API_URL: str = "https://ai.itmwg.vn/ai-mwg/qwen-edit-image/v1/images/edits"
     IMAGE_SIZE: str = "512x512"
-    IMAGE_STEPS: int = 8
+    IMAGE_STEPS: int = 4
     IMAGE_CFG: float = 1.0
     IMAGE_WORKERS: int = Field(default=2, ge=1, le=8)
     MWG_REQUEST_TIMEOUT_SECONDS: float = Field(

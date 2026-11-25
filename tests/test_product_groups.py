@@ -46,7 +46,7 @@ class CategoryTaxonomyTests(unittest.TestCase):
         }
         plan = build_catalog_plan(list(catalog), catalog)
         self.assertEqual(len(plan["categories"]), 1)
-        self.assertEqual(len(plan["requests"]), 2)
+        self.assertEqual(len(plan["requests"]), 1)
         group = plan["categories"][0]
         self.assertEqual(group["id"], "phones_tablets")
         self.assertEqual(group["name"], "Điện thoại & Máy tính bảng")

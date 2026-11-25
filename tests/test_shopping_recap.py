@@ -34,7 +34,7 @@ class ShoppingRecapTests(unittest.TestCase):
             "images": [],
             "size": "512x512",
             "n": 1,
-            "steps": 8,
+            "steps": 4,
             "cfg": 1.0,
         })
         self.assertEqual(arguments["timeout"], (15, 300))
@@ -97,7 +97,7 @@ class ShoppingRecapTests(unittest.TestCase):
             payload = post.call_args.args[1]
             self.assertEqual(payload["prompt"], "Điện thoại")
             self.assertEqual(payload["size"], "512x512")
-            self.assertEqual(payload["steps"], 8)
+            self.assertEqual(payload["steps"], 4)
             self.assertEqual(payload["cfg"], 1.0)
             self.assertEqual(payload["images"], [])
 
@@ -141,7 +141,7 @@ class ShoppingRecapTests(unittest.TestCase):
             "images": [image_url],
             "size": "512x512",
             "n": 1,
-            "steps": 8,
+            "steps": 4,
             "cfg": 1.0,
         })
 
